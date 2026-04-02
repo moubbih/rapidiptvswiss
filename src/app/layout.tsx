@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -120,6 +121,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main id="main-content">{children}</main>
         <WhatsAppButton />
         <Footer />
+        <Script id="crisp-chat" strategy="afterInteractive">
+          {`window.$crisp=[];window.CRISP_WEBSITE_ID="a2aeec22-a430-4b49-b133-29e01c899666";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`}
+        </Script>
       </body>
     </html>
   );
