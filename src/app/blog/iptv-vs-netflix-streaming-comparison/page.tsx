@@ -3,7 +3,7 @@ import { ALL_BLOG_POSTS } from "@/lib/allBlogPosts";
 import BlogPostTemplate from "@/components/BlogPostTemplate";
 import { notFound } from "next/navigation";
 
-const SLUG = "best-internet-speed-for-iptv";
+const SLUG = "iptv-vs-netflix-streaming-comparison";
 const post = ALL_BLOG_POSTS.find((p) => p.slug === SLUG);
 
 export function generateMetadata(): Metadata {
