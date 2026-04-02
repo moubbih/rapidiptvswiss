@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Mail, MessageCircle, Send, CheckCircle, AlertCircle } from "lucide-react";
 
-const WA_NUMBER = "41XXXXXXXXXX";
+const WA_NUMBER = "15595082154";
 
 export default function ContactPageClient() {
   const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" });
@@ -32,7 +32,7 @@ export default function ContactPageClient() {
               <Mail className="w-8 h-8 text-[var(--color-brand-primary)] mb-3" /><h3 className="text-white font-bold mb-1">Email Us</h3><p className="text-neutral-400 text-sm">support@rapidiptvswiss.com</p>
             </a>
             <a href={`https://wa.me/${WA_NUMBER}`} target="_blank" rel="noopener noreferrer" className="block bg-[var(--color-background-surface)] border border-white/10 rounded-xl p-6 hover:border-emerald-500/30 transition-all group">
-              <MessageCircle className="w-8 h-8 text-emerald-500 mb-3" /><h3 className="text-white font-bold mb-1">WhatsApp</h3><p className="text-neutral-400 text-sm">Chat with us directly</p><p className="text-emerald-400 text-xs mt-1">Usually replies within minutes</p>
+              <MessageCircle className="w-8 h-8 text-emerald-500 mb-3" /><h3 className="text-white font-bold mb-1">WhatsApp</h3><p className="text-neutral-400 text-sm">+1 (559) 508-2154</p><p className="text-emerald-400 text-xs mt-1">Usually replies within minutes</p>
             </a>
             <div className="bg-[var(--color-background-surface)] border border-white/10 rounded-xl p-6">
               <h3 className="text-white font-bold mb-2">Support Hours</h3><p className="text-neutral-400 text-sm">24/7 Available</p><p className="text-neutral-500 text-xs mt-1">We serve customers across all Swiss cantons</p>

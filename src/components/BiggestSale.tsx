@@ -2,7 +2,7 @@
 
 import { Flame, Check, Zap, ArrowRight } from "lucide-react";
 
-const WA_NUMBER = "41XXXXXXXXXX";
+const WA_NUMBER = "15595082154";
 
 const DEALS = [
   {

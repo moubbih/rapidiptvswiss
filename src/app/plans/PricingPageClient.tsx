@@ -40,7 +40,7 @@ const FEATURES = [
   "7-day money-back guarantee",
 ];
 
-const WA_NUMBER = "41XXXXXXXXXX";
+const WA_NUMBER = "15595082154";
 
 function getPrice(devices: number, months: "3" | "6" | "12"): number {
   return PRICE_TABLE[devices]?.[months] ?? 0;

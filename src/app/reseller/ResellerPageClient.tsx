@@ -2,7 +2,7 @@
 
 import { Users, DollarSign, Palette, Tv, Rocket, ShieldCheck, Check, MessageCircle } from "lucide-react";
 
-const WA_NUMBER = "41XXXXXXXXXX";
+const WA_NUMBER = "15595082154";
 const WA_LINK = `https://wa.me/${WA_NUMBER}`;
 
 const BENEFITS = [

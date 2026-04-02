@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 import Link from "next/link";
 import StructuredData from "./StructuredData";
 
-const WA_NUMBER = "41XXXXXXXXXX";
+const WA_NUMBER = "15595082154";
 
 /* ── Exact prices for homepage preview (1 & 2 devices) ──── */
 const PRICE_TABLE: Record<number, { "3": number; "6": number; "12": number }> = {
