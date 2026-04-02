@@ -1,80 +1,234 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { Search, Tv, Globe } from "lucide-react";
+import { useState, useEffect, useMemo } from "react";
+import { Search, Tv, Globe, Loader2 } from "lucide-react";
 
-const SWISS_CHANNELS = [
-  "SRF 1", "SRF zwei", "SRF info", "RTS Un", "RTS Deux", "RSI LA 1", "RSI LA 2",
-  "Blue Sport 1", "Blue Sport 2", "Blue Sport 3", "SRF Sport", "TV24", "TV25", "Star TV",
-  "3+", "4+", "5+", "6+", "TV Zurich", "Tele Basel", "Tele Bern", "Tele Top",
-  "Tele Z\u00fcri", "L\u00e9man Bleu", "Canal Alpha", "La T\u00e9l\u00e9", "TeleTicino",
-];
-
-const CATEGORIES = [
-  { name: "Swiss Channels", channels: SWISS_CHANNELS, flag: "\ud83c\udde8\ud83c\udded" },
-  { name: "German Channels", channels: ["ARD", "ZDF", "RTL", "SAT.1", "ProSieben", "VOX", "DMAX", "Sport1", "Sky Sport DE", "Eurosport DE", "N-TV", "WELT"], flag: "\ud83c\udde9\ud83c\uddea" },
-  { name: "French Channels", channels: ["TF1", "France 2", "France 3", "M6", "Canal+", "Arte", "BFM TV", "RMC Sport", "beIN Sports FR", "Eurosport FR"], flag: "\ud83c\uddeb\ud83c\uddf7" },
-  { name: "Italian Channels", channels: ["Rai 1", "Rai 2", "Rai 3", "Canale 5", "Italia 1", "Rete 4", "Sky Sport IT", "DAZN IT"], flag: "\ud83c\uddee\ud83c\uddf9" },
-  { name: "UK Channels", channels: ["BBC One", "BBC Two", "ITV", "Channel 4", "Sky Sports", "BT Sport", "Sky News", "CNN International"], flag: "\ud83c\uddec\ud83c\udde7" },
-  { name: "Sports", channels: ["ESPN", "ESPN 2", "Fox Sports", "beIN Sports", "Sky Sports F1", "DAZN", "NBA TV", "NFL Network", "Eurosport 1", "Eurosport 2", "Blue Sport", "Sport1"], flag: "\u26bd" },
-  { name: "Entertainment", channels: ["HBO", "Showtime", "Starz", "Cinemax", "AMC", "FX", "Comedy Central", "Discovery", "National Geographic", "History"], flag: "\ud83c\udfac" },
-  { name: "Kids", channels: ["Disney Channel", "Cartoon Network", "Nickelodeon", "Nick Jr", "Disney Junior", "BabyTV", "KiKA"], flag: "\ud83d\udc76" },
-  { name: "News", channels: ["CNN", "BBC World News", "Al Jazeera", "France 24", "DW", "Sky News", "Bloomberg", "CNBC", "Euronews"], flag: "\ud83d\udcf0" },
-];
+interface Channel {
+  name: string;
+  group: string;
+  countryCode: string;
+  logo: string;
+}
 
 export default function ChannelListPage() {
+  const [channels, setChannels] = useState<Channel[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
+  const CHANNELS_PER_PAGE = 100;
 
-  const filteredCategories = useMemo(() => {
-    if (!searchQuery) return CATEGORIES;
-    const q = searchQuery.toLowerCase();
-    return CATEGORIES.map((cat) => ({
-      ...cat,
-      channels: cat.channels.filter((ch) => ch.toLowerCase().includes(q)),
-    })).filter((cat) => cat.channels.length > 0);
-  }, [searchQuery]);
+  useEffect(() => {
+    async function fetchChannels() {
+      try {
+        const response = await fetch("/channels.json");
+        if (!response.ok) {
+          throw new Error("Could not load the channel database.");
+        }
 
-  const totalShown = filteredCategories.reduce((acc, cat) => acc + cat.channels.length, 0);
+        const data: [string, string, string, string][] = await response.json();
+
+        const parsedChannels: Channel[] = data.map((tuple) => ({
+          name: tuple[0],
+          group: tuple[1],
+          countryCode: tuple[2],
+          logo: tuple[3],
+        }));
+
+        setChannels(parsedChannels);
+      } catch (err: any) {
+        console.error("Failed to load channel cache:", err);
+        setError("Failed to load the channel database.");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchChannels();
+  }, []);
+
+  const filteredChannels = useMemo(() => {
+    if (!searchQuery) return channels;
+    const lowerQuery = searchQuery.toLowerCase();
+    return channels.filter(
+      (c) =>
+        c.name.toLowerCase().includes(lowerQuery) ||
+        c.group.toLowerCase().includes(lowerQuery) ||
+        (c.countryCode && c.countryCode.includes(lowerQuery))
+    );
+  }, [channels, searchQuery]);
+
+  const paginatedChannels = useMemo(() => {
+    const startIndex = (page - 1) * CHANNELS_PER_PAGE;
+    return filteredChannels.slice(startIndex, startIndex + CHANNELS_PER_PAGE);
+  }, [filteredChannels, page]);
+
+  const totalPages = Math.ceil(filteredChannels.length / CHANNELS_PER_PAGE);
 
   return (
     <div className="min-h-screen bg-[var(--color-background-base)] pt-32 pb-24">
       <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+        {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">IPTV Swiss <span className="text-[var(--color-brand-primary)]">Channel List</span> 2026</h1>
-          <p className="text-neutral-400 text-lg max-w-2xl mx-auto">Browse our selection of 30,000+ live channels from Switzerland and around the world. Below is a curated sample of our most popular channels organized by category.</p>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            IPTV Swiss{" "}
+            <span className="text-[var(--color-brand-primary)]">
+              Channel List
+            </span>{" "}
+            2026
+          </h1>
+          <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
+            Browse our massive library of live television networks from
+            Switzerland and around the world. Search by channel name, category,
+            or country code.
+          </p>
         </div>
 
+        {/* Search Bar */}
         <div className="max-w-3xl mx-auto mb-12 relative">
-          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"><Search className="h-6 w-6 text-neutral-500" /></div>
-          <input type="text" className="w-full bg-[var(--color-background-surface)] border border-white/10 text-white rounded-2xl py-4 pl-14 pr-4 focus:outline-none focus:border-[var(--color-brand-primary)] transition-colors text-lg" placeholder="Search channels (e.g., SRF, ESPN, BBC)..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <Search className="h-6 w-6 text-neutral-500" />
+          </div>
+          <input
+            type="text"
+            className="w-full bg-[var(--color-background-surface)] border border-white/10 text-white rounded-2xl py-4 pl-14 pr-4 focus:outline-none focus:border-[var(--color-brand-primary)] transition-colors text-lg"
+            placeholder="Search thousands of channels (e.g., SRF, ESPN, News, us, ch)..."
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setPage(1);
+            }}
+          />
         </div>
 
-        <div className="mb-6 text-neutral-400 text-sm"><p>Showing {totalShown} channels from our curated selection. Full library includes 30,000+ channels.</p></div>
+        {/* Error State */}
+        {error && (
+          <div className="max-w-3xl mx-auto bg-red-950/40 border border-red-500/50 p-6 rounded-2xl text-center mb-12">
+            <h3 className="text-xl font-bold text-red-500 mb-2">
+              Connection Error
+            </h3>
+            <p className="text-white mb-0">{error}</p>
+          </div>
+        )}
 
-        <div className="space-y-12">
-          {filteredCategories.map((cat) => (
-            <div key={cat.name}>
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <span className="text-2xl">{cat.flag}</span> {cat.name}
-              </h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
-                {cat.channels.map((ch) => (
-                  <div key={ch} className="bg-[var(--color-background-surface)] border border-white/5 rounded-lg p-3 flex items-center gap-3 hover:border-[var(--color-brand-primary)]/50 transition-colors">
-                    <Tv className="w-5 h-5 text-neutral-600 shrink-0" />
-                    <span className="text-white text-sm font-medium truncate">{ch}</span>
+        {/* Loading State */}
+        {loading ? (
+          <div className="flex flex-col items-center justify-center py-20 text-[var(--color-brand-primary)]">
+            <Loader2 className="w-12 h-12 animate-spin mb-4" />
+            <p className="text-white text-lg animate-pulse">
+              Loading &gt; 30,000 Channels...
+            </p>
+          </div>
+        ) : (
+          !error && (
+            <>
+              {/* Status counts */}
+              <div className="mb-6 flex justify-between items-center text-neutral-400 text-sm">
+                <p>
+                  Showing {filteredChannels.length.toLocaleString()} channels
+                </p>
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery("")}
+                    className="hover:text-white transition-colors"
+                  >
+                    Clear Search
+                  </button>
+                )}
+              </div>
+
+              {/* Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                {paginatedChannels.map((channel, idx) => (
+                  <div
+                    key={`${channel.name}-${idx}`}
+                    className="bg-[var(--color-background-surface)] border border-white/5 rounded-xl p-4 flex items-center gap-4 hover:border-[var(--color-brand-primary)]/50 transition-colors group"
+                  >
+                    {/* Channel Logo or Icon */}
+                    <div className="w-14 h-14 shrink-0 bg-[#1a1a24] rounded-lg flex items-center justify-center overflow-hidden">
+                      {channel.logo ? (
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img
+                          src={channel.logo}
+                          alt={channel.name}
+                          className="w-full h-full object-contain p-1"
+                          loading="lazy"
+                          onError={(e) =>
+                            (e.currentTarget.style.display = "none")
+                          }
+                        />
+                      ) : (
+                        <Tv className="w-7 h-7 text-neutral-600" />
+                      )}
+                    </div>
+
+                    <div className="flex-1 min-w-0">
+                      <h3
+                        className="text-white font-medium truncate group-hover:text-[var(--color-brand-primary)] transition-colors"
+                        title={channel.name}
+                      >
+                        {channel.name}
+                      </h3>
+                      <div className="flex items-center gap-2 mt-1">
+                        {channel.countryCode ? (
+                          /* eslint-disable-next-line @next/next/no-img-element */
+                          <img
+                            src={`https://flagcdn.com/w20/${channel.countryCode}.png`}
+                            alt={channel.countryCode}
+                            className="w-4 h-3 object-cover rounded-sm"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <Globe className="w-3 h-3 text-neutral-500" />
+                        )}
+                        <span className="text-xs text-neutral-500 truncate">
+                          {channel.group.split(";")[0]}
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
-            </div>
-          ))}
-        </div>
 
-        {filteredCategories.length === 0 && (
-          <div className="text-center py-20 border border-dashed border-white/10 rounded-2xl">
-            <Globe className="w-12 h-12 text-neutral-600 mx-auto mb-4" />
-            <h3 className="text-xl text-white font-medium">No channels found</h3>
-            <p className="text-neutral-400 mt-2">Try adjusting your search terms</p>
-          </div>
+              {/* Empty State */}
+              {filteredChannels.length === 0 && (
+                <div className="text-center py-20 border border-dashed border-white/10 rounded-2xl">
+                  <Tv className="w-12 h-12 text-neutral-600 mx-auto mb-4" />
+                  <h3 className="text-xl text-white font-medium">
+                    No channels found
+                  </h3>
+                  <p className="text-neutral-400 mt-2">
+                    Try adjusting your search terms
+                  </p>
+                </div>
+              )}
+
+              {/* Pagination Controls */}
+              {totalPages > 1 && (
+                <div className="flex flex-col sm:flex-row items-center justify-between mt-12 bg-[var(--color-background-surface)] p-4 rounded-xl border border-white/5 gap-4">
+                  <button
+                    onClick={() => setPage(Math.max(1, page - 1))}
+                    disabled={page === 1}
+                    className="px-6 py-2 rounded-lg bg-white/5 text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white/10 transition-colors"
+                  >
+                    Previous
+                  </button>
+                  <div className="text-neutral-400">
+                    Page{" "}
+                    <span className="text-white font-medium">{page}</span> of{" "}
+                    <span className="text-white font-medium">{totalPages}</span>
+                  </div>
+                  <button
+                    onClick={() => setPage(Math.min(totalPages, page + 1))}
+                    disabled={page === totalPages}
+                    className="px-6 py-2 rounded-lg bg-[var(--color-brand-primary)] text-white font-medium disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[var(--color-brand-primary)]/90 transition-colors"
+                  >
+                    Next Page
+                  </button>
+                </div>
+              )}
+            </>
+          )
         )}
       </div>
     </div>
