@@ -4,7 +4,7 @@ import PricingPage from "./PricingPageClient";
 
 export const metadata: Metadata = {
   title: "IPTV Subscription Switzerland | Pricing Plans in CHF 2026",
-  description: "IPTV subscription plans in CHF for Switzerland. 1 Month, 6 Months, 12 Months. 30,000+ channels in 4K. Pay with TWINT, Credit Card, or PayPal. No contract.",
+  description: "IPTV subscription plans in CHF for Switzerland. 3, 6, or 12 months. 1-5 devices. 30,000+ channels in 4K. Pay with TWINT, Credit Card, PayPal, or Crypto. From CHF 5.00/mo.",
   alternates: { canonical: "/plans" },
 };
 

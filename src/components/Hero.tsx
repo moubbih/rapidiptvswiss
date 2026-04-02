@@ -29,7 +29,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-2xl text-[var(--color-text-secondary)] max-w-2xl mb-8 md:mb-10 drop-shadow-md leading-relaxed">
-          Stream 30,000+ live channels including SRF, RTS, RSI &amp; global sports in stunning 4K. Buffer-free IPTV built for Swiss homes. Plans from CHF 6.99/mo.
+          Stream 30,000+ live channels including SRF, RTS, RSI &amp; global sports in stunning 4K. Buffer-free IPTV built for Swiss homes. Plans from CHF 5.00/mo.
         </motion.p>
 
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">

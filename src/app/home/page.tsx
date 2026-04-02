@@ -11,7 +11,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Rapid IPTV Swiss | Best IPTV Switzerland 2026 | 30,000+ Channels in 4K",
-  description: "Stream 30,000+ live channels including SRF, RTS, RSI in 4K Ultra HD. Best IPTV subscription in Switzerland 2026. Anti-freeze technology, instant activation. Plans from CHF 6.99/mo.",
+  description: "Stream 30,000+ live channels including SRF, RTS, RSI in 4K Ultra HD. Best IPTV subscription in Switzerland 2026. Anti-freeze technology, instant activation. Plans from CHF 5.00/mo.",
   alternates: { canonical: "/home" },
 };
 

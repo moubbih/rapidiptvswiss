@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Rapid IPTV Swiss",
   },
   description:
-    "Best IPTV subscription in Switzerland 2026. Stream 30,000+ live channels including SRF, RTS, RSI in 4K Ultra HD. Anti-freeze technology, instant activation. Plans from CHF 6.99/mo.",
+    "Best IPTV subscription in Switzerland 2026. Stream 30,000+ live channels including SRF, RTS, RSI in 4K Ultra HD. Anti-freeze technology, instant activation. Plans from CHF 5.00/mo.",
   keywords: [
     "IPTV Switzerland",
     "IPTV Swiss",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   publisher: "Rapid IPTV Swiss",
   openGraph: {
     title: "Rapid IPTV Swiss | Premium IPTV Service in Switzerland",
-    description: "Stream 30,000+ live channels including SRF, RTS, RSI in 4K Ultra HD. Buffer-free IPTV built for Swiss homes. Plans from CHF 6.99/mo.",
+    description: "Stream 30,000+ live channels including SRF, RTS, RSI in 4K Ultra HD. Buffer-free IPTV built for Swiss homes. Plans from CHF 5.00/mo.",
     url: "https://rapidiptvswiss.com/home",
     siteName: "Rapid IPTV Swiss",
     images: [{ url: "/hero_bg.webp", width: 1200, height: 630, alt: "Rapid IPTV Swiss \u2014 Premium IPTV Streaming in Switzerland" }],
