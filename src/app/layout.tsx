@@ -12,11 +12,11 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 export const metadata: Metadata = {
   metadataBase: new URL("https://rapidiptvswiss.com"),
   title: {
-    default: "Rapid IPTV Swiss | Best IPTV Switzerland 2026 | 30,000+ Channels",
+    default: "Best IPTV Switzerland 2026 | 30,000+ Channels in 4K",
     template: "%s | Rapid IPTV Swiss",
   },
   description:
-    "Best IPTV subscription in Switzerland 2026. Stream 30,000+ live channels including SRF, RTS, RSI in 4K Ultra HD. Anti-freeze technology, instant activation. Plans from CHF 5.00/mo.",
+    "Best IPTV subscription in Switzerland 2026. 30,000+ live channels including SRF, RTS, RSI in 4K Ultra HD. Plans from CHF 5.00/mo.",
   keywords: [
     "IPTV Switzerland",
     "IPTV Swiss",
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   creator: "Rapid IPTV Swiss",
   publisher: "Rapid IPTV Swiss",
   openGraph: {
-    title: "Rapid IPTV Swiss | Premium IPTV Service in Switzerland",
+    title: "Best IPTV Switzerland 2026 | Rapid IPTV Swiss",
     description: "Stream 30,000+ live channels including SRF, RTS, RSI in 4K Ultra HD. Buffer-free IPTV built for Swiss homes. Plans from CHF 5.00/mo.",
-    url: "https://rapidiptvswiss.com/home",
+    url: "https://rapidiptvswiss.com",
     siteName: "Rapid IPTV Swiss",
     images: [{ url: "/hero_bg.webp", width: 1200, height: 630, alt: "Rapid IPTV Swiss \u2014 Premium IPTV Streaming in Switzerland" }],
     locale: "en_CH",
@@ -43,16 +43,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rapid IPTV Swiss | Premium IPTV Switzerland 2026",
+    title: "Best IPTV Switzerland 2026 | Rapid IPTV Swiss",
     description: "30,000+ channels, Live Sports, 150,000+ Movies & Series in 4K. The best IPTV provider in Switzerland.",
     images: ["/hero_bg.webp"],
-  },
-  alternates: {
-    languages: {
-      "en-CH": "https://rapidiptvswiss.com",
-      "de-CH": "https://rapidiptvswiss.com",
-      "fr-CH": "https://rapidiptvswiss.com",
-    },
+    site: "@rapidiptvswiss",
   },
   robots: {
     index: true,
@@ -67,7 +61,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     "@type": "Organization",
     name: "Rapid IPTV Swiss",
     url: "https://rapidiptvswiss.com",
-    logo: { "@type": "ImageObject", url: "https://rapidiptvswiss.com/favicon.ico", width: 64, height: 64 },
+    logo: { "@type": "ImageObject", url: "https://rapidiptvswiss.com/hero_bg.webp", width: 1200, height: 630 },
     description: "Premium IPTV subscription service in Switzerland offering 30,000+ live channels, 150,000+ movies and series in 4K Ultra HD.",
     foundingDate: "2024-01-01",
     areaServed: { "@type": "Country", name: "Switzerland" },
@@ -84,6 +78,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     "@type": "WebSite",
     name: "Rapid IPTV Swiss",
     url: "https://rapidiptvswiss.com",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://rapidiptvswiss.com/articles?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 
   const softwareSchema = {
@@ -96,21 +98,26 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     url: "https://rapidiptvswiss.com",
     offers: {
       "@type": "Offer",
-      price: "14.99",
+      price: "29.99",
       priceCurrency: "CHF",
       priceValidUntil: "2026-12-31",
       availability: "https://schema.org/InStock",
       url: "https://rapidiptvswiss.com/plans",
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      reviewCount: "312",
+      bestRating: "5",
     },
   };
 
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://m.media-amazon.com" />
+        <link rel="dns-prefetch" href="https://m.media-amazon.com" />
         <link rel="alternate" hrefLang="en-CH" href="https://rapidiptvswiss.com" />
-        <link rel="alternate" hrefLang="de-CH" href="https://rapidiptvswiss.com" />
-        <link rel="alternate" hrefLang="fr-CH" href="https://rapidiptvswiss.com" />
-        <link rel="alternate" hrefLang="it-CH" href="https://rapidiptvswiss.com" />
         <link rel="alternate" hrefLang="x-default" href="https://rapidiptvswiss.com" />
       </head>
       <body className={`${inter.className} antialiased selection:bg-[var(--color-brand-primary)] selection:text-white`} suppressHydrationWarning>

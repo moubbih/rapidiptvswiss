@@ -18,14 +18,14 @@ export default function Hero() {
   return (
     <section className="relative w-full min-h-[700px] flex items-center justify-center overflow-hidden" style={{ height: "100dvh" }}>
       <div className="absolute inset-0 z-0">
-        <Image src="/hero_bg.webp" alt="Premium IPTV Streaming Service in Switzerland - Rapid IPTV Swiss" fill sizes="100vw" className="object-cover object-center opacity-60" priority />
+        <Image src="/hero_bg.webp" alt="IPTV Switzerland - Stream 30,000+ channels in 4K with Rapid IPTV Swiss" fill sizes="100vw" className="object-cover object-center opacity-60" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-background-base)] via-[var(--color-background-base)]/60 to-black/20" />
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-background-base)]/80 via-transparent to-transparent" />
       </div>
 
       <motion.div variants={containerVariants} initial="hidden" animate="visible" className="relative z-10 container mx-auto px-6 md:px-8 flex flex-col items-center text-center md:items-start md:text-left pt-16">
         <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight max-w-4xl drop-shadow-2xl mb-4 md:mb-5">
-          Rapid IPTV Swiss &mdash; Premium IPTV Service in Switzerland
+          Best IPTV Switzerland 2026 &mdash; Rapid IPTV Swiss
         </motion.h1>
 
         <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-2xl text-[var(--color-text-secondary)] max-w-2xl mb-8 md:mb-10 drop-shadow-md leading-relaxed">

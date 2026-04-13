@@ -60,7 +60,7 @@ export default function Carousel({ title, items, aspectRatio = "poster" }: Carou
         <div ref={scrollRef} className="flex overflow-x-auto gap-1.5 sm:gap-2 md:gap-3 px-4 md:px-12 scrollbar-hide py-2 md:py-4" style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch", scrollBehavior: "smooth" }}>
           {items.map((item) => (
             <div key={item.id} className={`relative flex-none cursor-pointer rounded-md overflow-hidden transition-all duration-300 ease-out md:hover:scale-110 md:hover:z-20 md:hover:shadow-xl md:hover:shadow-black/60 ${isLogo ? "w-[130px] sm:w-[170px] md:w-[250px] aspect-[2/1] bg-[#111118] border border-white/5 flex items-center justify-center" : "w-[105px] sm:w-[135px] md:w-[200px] aspect-[2/3]"}`} style={{ scrollSnapAlign: "start" }}>
-              <Image src={item.imageSrc} alt={item.title || "Channel Logo"} fill unoptimized className={isLogo ? "object-contain p-3 md:p-5" : "object-cover"} />
+              <Image src={item.imageSrc} alt={item.title || "Channel Logo"} fill sizes={isLogo ? "250px" : "200px"} unoptimized className={isLogo ? "object-contain p-3 md:p-5" : "object-cover"} />
               {!isLogo && item.title && (
                 <>
                   <div className="md:hidden absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent pt-6 pb-1.5 px-2">
