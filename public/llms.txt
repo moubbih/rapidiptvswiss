@@ -1,0 +1,36 @@
+# Rapid IPTV Swiss
+
+> Premium IPTV subscription service in Switzerland offering 30,000+ live channels, 150,000+ movies and series in 4K Ultra HD. Plans from CHF 5.00/mo with instant activation.
+
+## Key Pages
+
+- [Home](https://rapidiptvswiss.com/): Overview of Rapid IPTV Swiss service, pricing, features, and FAQ
+- [Plans & Pricing](https://rapidiptvswiss.com/plans): IPTV subscription plans starting from CHF 5.00/month
+- [Live Channels](https://rapidiptvswiss.com/live-channels): Full list of 30,000+ live TV channels including SRF, RTS, RSI
+- [Installation Guide](https://rapidiptvswiss.com/installation-guide): Step-by-step setup instructions for all supported devices
+- [Supported Devices](https://rapidiptvswiss.com/supported-devices): Compatible devices including Fire TV, Smart TV, Android, iOS, Apple TV
+- [FAQ](https://rapidiptvswiss.com/faq): Frequently asked questions about IPTV in Switzerland
+- [Blog](https://rapidiptvswiss.com/blog): Guides, tutorials, and articles about IPTV in Switzerland
+
+## Blog Articles
+
+- [How Does IPTV Work?](https://rapidiptvswiss.com/blog/how-does-iptv-work): Technical explanation of IPTV streaming technology
+- [Is IPTV Legal in Switzerland?](https://rapidiptvswiss.com/blog/is-iptv-legal-in-switzerland): Legal status of IPTV services in Switzerland
+- [IPTV vs Cable TV Switzerland](https://rapidiptvswiss.com/blog/iptv-vs-cable-tv-switzerland): Comparison of IPTV and traditional cable TV in Switzerland
+- [IPTV vs Netflix](https://rapidiptvswiss.com/blog/iptv-vs-netflix-streaming-comparison): IPTV compared to Netflix and other streaming platforms
+- [Best IPTV Apps 2026](https://rapidiptvswiss.com/blog/best-iptv-apps-2026): Top IPTV player apps for all platforms
+- [IPTV on Firestick](https://rapidiptvswiss.com/blog/iptv-on-firestick-switzerland): Setup guide for Amazon Fire TV Stick
+- [IPTV on Smart TV](https://rapidiptvswiss.com/blog/iptv-on-smart-tv-switzerland): Setup guide for Samsung, LG, and other Smart TVs
+- [IPTV on Apple TV](https://rapidiptvswiss.com/blog/iptv-on-apple-tv-setup): Setup guide for Apple TV
+- [Swiss TV Channels on IPTV](https://rapidiptvswiss.com/blog/swiss-tv-channels-iptv): Guide to Swiss national channels available via IPTV
+- [Best Internet Speed for IPTV](https://rapidiptvswiss.com/blog/best-internet-speed-for-iptv): Recommended internet speeds for IPTV streaming
+- [IPTV for Expats](https://rapidiptvswiss.com/blog/iptv-for-expats-in-switzerland): Guide for expats using IPTV in Switzerland
+- [Fix IPTV Buffering](https://rapidiptvswiss.com/blog/iptv-buffering-fix-guide): Troubleshooting buffering and freezing issues
+- [Payment Methods](https://rapidiptvswiss.com/blog/iptv-payment-methods-switzerland): Accepted payment methods including TWINT
+
+## Company Info
+
+- **Service Area**: Switzerland (Zurich, Geneva, Basel, Bern, Lausanne)
+- **Languages**: English, German, French, Italian
+- **Support**: support@rapidiptvswiss.com
+- **Founded**: 2024
