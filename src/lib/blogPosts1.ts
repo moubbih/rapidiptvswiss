@@ -55,6 +55,10 @@ export const POSTS_1_7: FullBlogPost[] = [
       },
       {
         type: "paragraph",
+        text: "The full text of Article 19 URG is published on the Swiss Federal Chancellery's legislation platform at fedlex.admin.ch, where anyone can review the official wording in German, French, Italian, and English. The key provision states that a person may use published works for private purposes, which includes streaming within a household. According to the Swiss Federal Institute of Intellectual Property (IPI), private use covers consumption by close friends and family but does not extend to public screenings or commercial redistribution.",
+      },
+      {
+        type: "paragraph",
         text: "However, Article 19 does not protect the provider who distributes unlicensed content. If a service streams channels without proper broadcasting agreements, the operator of that service is breaking the law even if the viewer technically is not. Swiss courts have consistently held that distributing copyrighted content without authorization violates federal law.",
       },
       {
@@ -112,6 +116,40 @@ export const POSTS_1_7: FullBlogPost[] = [
       {
         type: "paragraph",
         text: "Swiss authorities have stepped up enforcement against illegal IPTV operations in recent years. Although individual viewers are rarely targeted, the services themselves are being shut down with increasing frequency. If your provider disappears overnight, any prepaid subscription fees are gone with it.",
+      },
+      {
+        type: "paragraph",
+        text: "There are also privacy risks worth considering. Unlicensed IPTV providers rarely invest in secure infrastructure. Your viewing habits, IP address, and payment information may be stored on poorly protected servers or sold to advertising networks. Data from cybersecurity researchers has shown that free or cheap IPTV apps are among the most common sources of adware and tracking software on Android devices.",
+      },
+      {
+        type: "heading",
+        text: "How Swiss Courts Have Ruled on IPTV",
+      },
+      {
+        type: "paragraph",
+        text: "Swiss courts have handled several cases involving unlicensed IPTV distribution over the past decade. While published rulings rarely name the defendants publicly, the legal pattern is consistent. Courts apply the URG alongside the Swiss Criminal Code (StGB) provisions on fraud and unfair competition. Operators who resell streams without authorization face fines, asset seizures, and in repeat cases, custodial sentences.",
+      },
+      {
+        type: "paragraph",
+        text: "One notable trend is that prosecutors increasingly cooperate with Europol and neighbouring countries to shut down cross-border IPTV rings. Switzerland participates in coordinated takedown operations, and Swiss-based payment processors have frozen accounts linked to unlicensed streaming services. For viewers, the practical takeaway is simple: if a provider is operating outside the law, its service could vanish at any time with no legal obligation to refund subscribers.",
+      },
+      {
+        type: "paragraph",
+        text: "The Swiss Federal Council has also signalled that future revisions to copyright law may tighten the rules around streaming consumption, not just distribution. While no specific legislation has been proposed, the direction of travel in Europe is toward holding both providers and users more accountable. Choosing a licensed provider today means you will not need to worry about any future regulatory changes.",
+      },
+      {
+        type: "heading",
+        text: "5 Signs of a Legitimate IPTV Provider",
+      },
+      {
+        type: "list",
+        items: [
+          "Transparent business registration: The provider publishes a verifiable Swiss or European company registration number, a physical address, and the names of its directors or owners.",
+          "Reasonable channel counts at fair prices: Legitimate licensing costs money. A service offering 20,000 channels for CHF 3 per month is almost certainly not paying for content rights. Realistic lineups range from a few hundred to a few thousand channels at prices that reflect actual licensing fees.",
+          "Secure payment processing: The service accepts standard payment methods like credit cards, PayPal, or Twint. It does not require cryptocurrency or gift card payments, which are difficult to trace or reverse.",
+          "Published terms of service and privacy policy: A legitimate provider clearly states what data it collects, how it handles refunds, and what happens if the service is discontinued. These documents should be available on the website before you subscribe.",
+          "Responsive multilingual support: In Switzerland, a trustworthy provider offers customer service in at least two national languages and responds within a reasonable time frame. If you cannot reach anyone before paying, you will have even less luck after.",
+        ],
       },
       {
         type: "heading",
@@ -704,6 +742,88 @@ export const POSTS_1_7: FullBlogPost[] = [
           "Android TV box running any compatible IPTV player",
           "Smartphone or tablet (iOS or Android) with an IPTV app",
           "Computer or laptop using VLC media player or a web-based player",
+        ],
+      },
+      {
+        type: "heading",
+        text: "IPTV vs OTT Streaming: What's the Difference?",
+      },
+      {
+        type: "paragraph",
+        text: "You might wonder how IPTV differs from streaming services like Netflix, YouTube, or Disney+. These platforms use a technology called OTT, which stands for Over-The-Top. Both IPTV and OTT deliver video over the internet, but they work differently under the hood.",
+      },
+      {
+        type: "paragraph",
+        text: "IPTV operates through a managed or semi-managed network and delivers live television channels in real time. When you tune into a channel, you receive a continuous stream just like cable TV. OTT platforms, by contrast, serve on-demand content from massive cloud servers. You pick a movie or episode and the service buffers chunks of it ahead of your viewing position. OTT does not offer live linear channels in the traditional sense.",
+      },
+      {
+        type: "list",
+        items: [
+          "IPTV delivers live TV channels in real time; OTT delivers on-demand content you select from a catalogue",
+          "IPTV uses M3U playlists or Xtream Codes for channel access; OTT uses proprietary apps with built-in libraries",
+          "IPTV typically includes thousands of international channels; OTT platforms focus on their own licensed or original content",
+          "IPTV subscriptions cover live sports, news, and entertainment in one plan; OTT services charge separately per platform",
+          "IPTV requires a third-party player app; OTT services provide their own dedicated apps for each device",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Many Swiss households use both IPTV and OTT together. IPTV handles live television, sports, and international channels, while Netflix or Disney+ fills the gap for exclusive series and movies. The two technologies complement each other rather than compete directly.",
+      },
+      {
+        type: "heading",
+        text: "What Equipment Do You Need for IPTV?",
+      },
+      {
+        type: "paragraph",
+        text: "One of IPTV's biggest advantages is that it does not require expensive or specialized hardware. Most people already own a device capable of running IPTV. Here is a breakdown of the equipment you need and what to look for when choosing a setup.",
+      },
+      {
+        type: "list",
+        items: [
+          "Internet connection: A stable broadband connection is essential. For HD streams, 10 to 15 Mbps is sufficient. For 4K content, aim for 25 Mbps or more. Most Swiss ISP plans from Swisscom, Sunrise, and Salt exceed these requirements by a wide margin.",
+          "Streaming device: This can be a Smart TV with a built-in app store, an Amazon Fire TV Stick, an Android TV box (such as Nvidia Shield or Xiaomi Mi Box), a smartphone, a tablet, or a desktop computer. Any device that runs an IPTV player app will work.",
+          "IPTV player app: You need software to decode and display the streams. Popular choices include IPTV Smarters Pro, TiviMate, Smart IPTV, VLC, and GSE Smart IPTV. Your provider will tell you which apps are compatible with their service.",
+          "Router: A modern Wi-Fi router with 5 GHz support is recommended. For the best results, connect your streaming device to the router with an Ethernet cable to avoid Wi-Fi interference, especially in older Swiss apartment buildings with thick walls.",
+          "IPTV subscription: You need an active subscription from a provider like Rapid IPTV Swiss, which gives you the M3U playlist URL or Xtream Codes credentials to enter into your app.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Technical Specs Behind IPTV Streaming",
+      },
+      {
+        type: "paragraph",
+        text: "For those curious about the technical side, IPTV relies on several standard protocols and encoding formats to deliver video efficiently. You do not need to memorize these, but understanding the basics can help you troubleshoot issues or evaluate a provider's quality.",
+      },
+      {
+        type: "list",
+        items: [
+          "Streaming protocols: Most IPTV services use HTTP Live Streaming (HLS) or Real-Time Streaming Protocol (RTSP). HLS is the most common because it works well across all devices and adjusts quality based on your connection speed.",
+          "Video codecs: H.264 (AVC) remains the standard for HD content. H.265 (HEVC) is increasingly used for 4K streams because it compresses video more efficiently, delivering the same quality at roughly half the file size.",
+          "Audio codecs: AAC and AC3 (Dolby Digital) are the most widely supported audio formats. Some premium channels also support E-AC3 (Dolby Digital Plus) for surround sound.",
+          "Bandwidth per stream: A typical SD channel uses 1.5 to 3 Mbps. An HD channel requires 5 to 8 Mbps. A Full HD 1080p stream uses 8 to 12 Mbps. A 4K stream with HEVC encoding uses 15 to 25 Mbps.",
+          "Container formats: IPTV streams are usually delivered in MPEG-TS (Transport Stream) or MP4 containers, both of which are supported by all major player apps.",
+        ],
+      },
+      {
+        type: "heading",
+        text: "Common IPTV Terms Explained",
+      },
+      {
+        type: "paragraph",
+        text: "If you are new to IPTV, you will encounter terminology that might be unfamiliar. Here is a plain-language glossary of the most common terms you will see when setting up and using an IPTV service.",
+      },
+      {
+        type: "list",
+        items: [
+          "M3U: A playlist file format that lists channel names alongside their streaming URLs. Your IPTV provider gives you an M3U link, and you paste it into your player app to load all available channels.",
+          "EPG (Electronic Programme Guide): A TV schedule that shows what is currently airing and what is coming up on each channel. It works like the programme guide on cable TV and is usually loaded automatically by your IPTV app.",
+          "Xtream Codes: A login system used by many IPTV providers. Instead of an M3U link, you receive a server address, username, and password. This method keeps your channel list updated automatically.",
+          "VOD (Video on Demand): A library of movies and TV series included with many IPTV subscriptions. You browse the catalogue and watch content whenever you want, similar to Netflix.",
+          "Catch-Up TV: A feature that lets you watch programmes that have already aired, typically within the past 24 to 72 hours. Useful if you missed a live broadcast and want to watch it later.",
+          "CDN (Content Delivery Network): A network of servers distributed across multiple locations. CDNs reduce buffering by serving content from the server closest to your geographic location.",
+          "MAC address: A unique identifier assigned to your device's network hardware. Some IPTV apps use the MAC address to link your subscription to a specific device.",
         ],
       },
       {

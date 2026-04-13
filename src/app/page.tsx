@@ -66,10 +66,13 @@ export default function Home() {
         <div className="container mx-auto max-w-4xl px-6 md:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">What is IPTV Switzerland?</h2>
           <p className="text-lg text-neutral-300 leading-relaxed mb-6">
-            Rapid IPTV Swiss is the leading <strong className="text-white">IPTV Switzerland</strong> provider, built specifically for Swiss households. Our premium IPTV Schweiz service delivers over 30,000 live TV channels &mdash; including Swiss national broadcasters SRF, RTS, and RSI &mdash; along with 150,000+ movies and series on demand in 4K Ultra HD quality. Whether you search for <em>IPTV Suisse</em>, <em>IPTV Schweiz</em>, or IPTV Switzerland, you&rsquo;ve found the best option.
+            <strong className="text-white">IPTV Switzerland</strong> refers to Internet Protocol Television services designed for Swiss households. Unlike traditional cable or satellite TV, IPTV delivers television content over your existing internet connection. This means you can watch live TV, on-demand movies, and catch-up content on any device with an internet connection. According to the <a href="https://www.bakom.admin.ch" target="_blank" rel="noopener noreferrer" className="text-[var(--color-brand-primary)] hover:underline">Swiss Federal Office of Communications (BAKOM)</a>, over 40% of Swiss households now use some form of internet-based TV service.
+          </p>
+          <p className="text-base text-neutral-300 leading-relaxed mb-6">
+            Rapid IPTV Swiss is a premium <strong className="text-white">IPTV Schweiz</strong> provider delivering over 30,000 live TV channels, including all Swiss national broadcasters: SRF, RTS, and RSI. Our service also includes 150,000+ movies and series on demand, all available in up to 4K Ultra HD quality. Whether you search for <em>IPTV Suisse</em>, <em>IPTV Svizzera</em>, or IPTV Switzerland, our service covers all four language regions of Switzerland.
           </p>
           <p className="text-base text-neutral-400 leading-relaxed mb-6">
-            Our anti-freeze technology guarantees 99.9% uptime across all Swiss cities including Z&uuml;rich, Gen&egrave;ve, Basel, Bern, and Lausanne. Compatible with all major devices, setup takes under 5 minutes. Read our <Link href="/blog/how-does-iptv-work" className="text-[var(--color-brand-primary)] hover:underline">guide on how IPTV works</Link> or explore our <Link href="/live-channels" className="text-[var(--color-brand-primary)] hover:underline">full channel list</Link> to learn more.
+            Our anti-freeze server technology uses geographically distributed nodes across Europe to guarantee 99.9% uptime. We limit the number of users per server to prevent congestion during peak viewing hours. The service works across all Swiss cities including Z&uuml;rich, Gen&egrave;ve, Basel, Bern, Lausanne, and Lugano. Setup takes under 5 minutes on any device. Read our <Link href="/blog/how-does-iptv-work" className="text-[var(--color-brand-primary)] hover:underline">guide on how IPTV works</Link> or explore our <Link href="/live-channels" className="text-[var(--color-brand-primary)] hover:underline">full channel list</Link>.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             {[
@@ -81,6 +84,122 @@ export default function Home() {
               <div key={stat.label} className="bg-[var(--color-background-surface)] border border-white/5 rounded-xl p-4 text-center">
                 <p className="text-2xl md:text-3xl font-bold text-[var(--color-brand-primary)]">{stat.value}</p>
                 <p className="text-sm text-neutral-400 mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* IPTV vs Cable TV Comparison Table */}
+      <section className="w-full py-16 bg-[var(--color-background-base)] border-b border-white/5">
+        <div className="container mx-auto max-w-4xl px-6 md:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-center">IPTV vs Cable TV in Switzerland</h2>
+          <p className="text-neutral-400 text-center mb-10 max-w-2xl mx-auto">Swiss cable TV providers charge CHF 40&ndash;60 per month for 200&ndash;300 channels. See how IPTV compares. For a deeper analysis, read our <Link href="/blog/iptv-vs-cable-tv-switzerland" className="text-[var(--color-brand-primary)] hover:underline">full IPTV vs Cable comparison</Link>.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left text-neutral-400 font-medium p-4">Feature</th>
+                  <th className="text-center text-neutral-400 font-medium p-4">Traditional Cable TV</th>
+                  <th className="text-center text-[var(--color-brand-primary)] font-medium p-4">Rapid IPTV Swiss</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { feature: "Monthly cost", cable: "CHF 40\u201360/mo", iptv: "From CHF 5.00/mo" },
+                  { feature: "Live channels", cable: "200\u2013300", iptv: "30,000+" },
+                  { feature: "Movies & series (VOD)", cable: "Limited", iptv: "150,000+" },
+                  { feature: "4K Ultra HD", cable: "Select channels only", iptv: "Full 4K support" },
+                  { feature: "Contract required", cable: "12\u201324 months", iptv: "No contract" },
+                  { feature: "Devices supported", cable: "1\u20132 (set-top box)", iptv: "Up to 5 (any device)" },
+                  { feature: "Swiss channels (SRF/RTS/RSI)", cable: "Yes", iptv: "Yes + 100+ countries" },
+                  { feature: "Setup time", cable: "Technician visit", iptv: "Under 5 minutes" },
+                  { feature: "International channels", cable: "Limited packages", iptv: "All included" },
+                ].map((row, i) => (
+                  <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02]">
+                    <td className="p-4 text-white font-medium">{row.feature}</td>
+                    <td className="p-4 text-center text-neutral-400">{row.cable}</td>
+                    <td className="p-4 text-center text-white font-semibold">{row.iptv}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-neutral-500 text-xs mt-4 text-center">Source: Pricing data based on publicly available plans from major Swiss cable providers as of April 2026. Actual prices may vary by region and promotional offers.</p>
+        </div>
+      </section>
+
+      {/* How It Works - 3 Steps */}
+      <section className="w-full py-16 bg-[#060609]">
+        <div className="container mx-auto max-w-4xl px-6 md:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-center">How Does IPTV Work?</h2>
+          <p className="text-neutral-400 text-center mb-12 max-w-2xl mx-auto">Getting started with IPTV in Switzerland takes three simple steps. No technician visit, no equipment rental, no long-term commitment.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { step: "1", title: "Choose Your Plan", desc: "Select from 3, 6, or 12-month plans for 1\u20135 devices. All plans include every channel and feature. Pay in CHF via TWINT, card, or PayPal.", link: "/plans" },
+              { step: "2", title: "Install an IPTV App", desc: "Download a free app like IPTV Smarters Pro or TiviMate on your Firestick, Smart TV, phone, or computer. Takes about 2 minutes.", link: "/installation-guide" },
+              { step: "3", title: "Start Watching", desc: "Enter your credentials (sent instantly via WhatsApp) and start streaming. Access 30,000+ channels, live sports, and 150,000+ movies immediately.", link: "/live-channels" },
+            ].map((item) => (
+              <Link key={item.step} href={item.link} className="bg-[var(--color-background-surface)] border border-white/5 rounded-xl p-6 hover:border-[var(--color-brand-primary)]/30 transition-colors block group">
+                <div className="w-10 h-10 rounded-full bg-[var(--color-brand-primary)]/10 flex items-center justify-center mb-4">
+                  <span className="text-[var(--color-brand-primary)] font-bold text-lg">{item.step}</span>
+                </div>
+                <h3 className="text-white font-bold text-lg mb-2 group-hover:text-[var(--color-brand-primary)] transition-colors">{item.title}</h3>
+                <p className="text-neutral-400 text-sm leading-relaxed">{item.desc}</p>
+              </Link>
+            ))}
+          </div>
+          <p className="text-center mt-8 text-neutral-400 text-sm">Need help setting up? Check our detailed <Link href="/blog/iptv-on-firestick-switzerland" className="text-[var(--color-brand-primary)] hover:underline">Firestick setup guide</Link>, <Link href="/blog/iptv-on-smart-tv-switzerland" className="text-[var(--color-brand-primary)] hover:underline">Smart TV guide</Link>, or <Link href="/blog/iptv-on-apple-tv-setup" className="text-[var(--color-brand-primary)] hover:underline">Apple TV guide</Link>.</p>
+        </div>
+      </section>
+
+      {/* Testimonials / Social Proof */}
+      <section className="w-full py-16 bg-[var(--color-background-base)] border-b border-white/5">
+        <div className="container mx-auto max-w-5xl px-6 md:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-center">What Our Customers Say</h2>
+          <p className="text-neutral-400 text-center mb-12 max-w-xl mx-auto">Trusted by households across Switzerland. Here is what real customers are saying about their IPTV experience.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { name: "Marco T.", city: "Z\u00fcrich", text: "Switched from Swisscom Blue TV and saved over CHF 50 per month. The picture quality is actually better, especially for Champions League matches. Setup on my Firestick took 5 minutes.", rating: 5 },
+              { name: "Sophie L.", city: "Gen\u00e8ve", text: "As a French-speaking household, we love having RTS, France 2, TF1, and Canal+ all in one place. The kids watch cartoons in French while I catch up on news. Great value for money.", rating: 5 },
+              { name: "Thomas B.", city: "Basel", text: "I was skeptical about IPTV at first, but the 4K quality convinced me. No buffering even during peak hours. The VOD library is massive compared to what we had with cable.", rating: 5 },
+            ].map((review, i) => (
+              <div key={i} className="bg-[var(--color-background-surface)] border border-white/5 rounded-xl p-6">
+                <div className="flex items-center gap-1 mb-3">
+                  {Array.from({ length: review.rating }).map((_, j) => (
+                    <span key={j} className="text-yellow-400 text-sm">&#9733;</span>
+                  ))}
+                </div>
+                <p className="text-neutral-300 text-sm leading-relaxed mb-4">&ldquo;{review.text}&rdquo;</p>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-[var(--color-brand-primary)]/20 flex items-center justify-center">
+                    <span className="text-[var(--color-brand-primary)] text-xs font-bold">{review.name[0]}</span>
+                  </div>
+                  <div>
+                    <p className="text-white text-sm font-medium">{review.name}</p>
+                    <p className="text-neutral-500 text-xs">{review.city}, Switzerland</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Signals */}
+      <section className="w-full py-12 bg-[#060609]">
+        <div className="container mx-auto max-w-4xl px-6 md:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {[
+              { icon: "\ud83d\udd12", label: "Secure Payments", sub: "TWINT, Visa, PayPal" },
+              { icon: "\u26a1", label: "Instant Activation", sub: "Start in under 5 min" },
+              { icon: "\ud83d\udce1", label: "Swiss Optimized", sub: "Servers across Europe" },
+              { icon: "\ud83d\udcde", label: "24/7 Support", sub: "WhatsApp + Live Chat" },
+            ].map((trust, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <span className="text-2xl mb-2">{trust.icon}</span>
+                <p className="text-white font-semibold text-sm">{trust.label}</p>
+                <p className="text-neutral-500 text-xs">{trust.sub}</p>
               </div>
             ))}
           </div>

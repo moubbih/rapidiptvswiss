@@ -75,6 +75,7 @@ export default function Footer() {
                 { name: "Privacy Policy", href: "/privacy" },
                 { name: "Cancellation Policy", href: "/cancellations" },
                 { name: "Refund Policy", href: "/refunds" },
+                { name: "Impressum", href: "/impressum" },
               ].map((link) => (
                 <li key={link.name}><Link href={link.href} className="text-neutral-400 hover:text-white text-sm transition-colors">{link.name}</Link></li>
               ))}

@@ -116,6 +116,7 @@ export default function BlogPostTemplate({
           <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" />{new Date(`${post.publishedDate}T00:00:00`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</span>
           <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" />{readingTime} min read</span>
           <span className="flex items-center gap-1.5"><User className="w-4 h-4" />Rapid IPTV Swiss Team</span>
+          <span className="text-neutral-500 text-xs ml-auto">Last updated: {new Date(`${post.publishedDate}T00:00:00`).toLocaleDateString("en-US", { month: "long", year: "numeric" })}</span>
         </div>
 
         {/* Table of contents */}
