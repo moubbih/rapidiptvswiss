@@ -59,7 +59,13 @@ export default function BlogPostTemplate({
     "@type": "BlogPosting",
     headline: post.title,
     image: `https://rapidiptvswiss.com${post.heroImage}`,
-    author: { "@type": "Organization", name: "Rapid IPTV Swiss", url: "https://rapidiptvswiss.com" },
+    author: {
+      "@type": "Person",
+      name: "Daniel Meier",
+      jobTitle: "IPTV Technology Specialist",
+      url: "https://rapidiptvswiss.com/about",
+      worksFor: { "@type": "Organization", name: "Rapid IPTV Swiss" },
+    },
     publisher: {
       "@type": "Organization",
       name: "Rapid IPTV Swiss",
@@ -115,7 +121,7 @@ export default function BlogPostTemplate({
         <div className="flex flex-wrap items-center gap-4 text-neutral-400 mb-10 pb-8 border-b border-white/10 text-sm">
           <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" />{new Date(`${post.publishedDate}T00:00:00`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</span>
           <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" />{readingTime} min read</span>
-          <span className="flex items-center gap-1.5"><User className="w-4 h-4" />Rapid IPTV Swiss Team</span>
+          <span className="flex items-center gap-1.5"><User className="w-4 h-4" />Daniel Meier</span>
           <span className="text-neutral-500 text-xs ml-auto">Last updated: {new Date(`${post.publishedDate}T00:00:00`).toLocaleDateString("en-US", { month: "long", year: "numeric" })}</span>
         </div>
 
@@ -189,8 +195,9 @@ export default function BlogPostTemplate({
             <User className="w-7 h-7 text-[var(--color-brand-primary)]" />
           </div>
           <div>
-            <p className="text-white font-bold">Rapid IPTV Swiss Team</p>
-            <p className="text-neutral-400 text-sm">Expert guides on IPTV streaming in Switzerland. Helping Swiss households cut the cord since 2024.</p>
+            <Link href="/about" className="text-white font-bold hover:text-[var(--color-brand-primary)] transition-colors">Daniel Meier</Link>
+            <p className="text-[var(--color-brand-primary)] text-xs font-medium">IPTV Technology Specialist</p>
+            <p className="text-neutral-400 text-sm mt-1">8+ years in streaming infrastructure and IPTV deployment across Europe. Based in Switzerland, specializing in Swiss broadcasting and multi-language content delivery.</p>
           </div>
         </div>
 

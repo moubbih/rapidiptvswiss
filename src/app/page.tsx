@@ -66,7 +66,7 @@ export default function Home() {
         <div className="container mx-auto max-w-4xl px-6 md:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">What is IPTV Switzerland?</h2>
           <p className="text-lg text-neutral-300 leading-relaxed mb-6">
-            <strong className="text-white">IPTV Switzerland</strong> refers to Internet Protocol Television services designed for Swiss households. Unlike traditional cable or satellite TV, IPTV delivers television content over your existing internet connection. This means you can watch live TV, on-demand movies, and catch-up content on any device with an internet connection. According to the <a href="https://www.bakom.admin.ch" target="_blank" rel="noopener noreferrer" className="text-[var(--color-brand-primary)] hover:underline">Swiss Federal Office of Communications (BAKOM)</a>, over 40% of Swiss households now use some form of internet-based TV service.
+            <strong className="text-white">IPTV Switzerland</strong> refers to Internet Protocol Television services designed for Swiss households. Unlike traditional cable or satellite TV, IPTV delivers television content over your existing internet connection. This means you can watch live TV, on-demand movies, and catch-up content on any device with an internet connection. According to the <a href="https://www.bakom.admin.ch/bakom/en/homepage/telecommunication/facts-and-figures.html" target="_blank" rel="noopener noreferrer" className="text-[var(--color-brand-primary)] hover:underline">Swiss Federal Office of Communications (BAKOM) statistics</a>, over 40% of Swiss households now use some form of internet-based TV service.
           </p>
           <p className="text-base text-neutral-300 leading-relaxed mb-6">
             Rapid IPTV Swiss is a premium <strong className="text-white">IPTV Schweiz</strong> provider delivering over 30,000 live TV channels, including all Swiss national broadcasters: SRF, RTS, and RSI. Our service also includes 150,000+ movies and series on demand, all available in up to 4K Ultra HD quality. Whether you search for <em>IPTV Suisse</em>, <em>IPTV Svizzera</em>, or IPTV Switzerland, our service covers all four language regions of Switzerland.
@@ -125,7 +125,7 @@ export default function Home() {
               </tbody>
             </table>
           </div>
-          <p className="text-neutral-500 text-xs mt-4 text-center">Source: Pricing data based on publicly available plans from major Swiss cable providers as of April 2026. Actual prices may vary by region and promotional offers.</p>
+          <p className="text-neutral-500 text-xs mt-4 text-center">Source: Pricing based on publicly listed plans from major Swiss cable providers (April 2026). See <a href="https://www.comparis.ch/telecom/internet/vergleich" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-[var(--color-brand-primary)]">Comparis.ch</a> for current comparisons.</p>
         </div>
       </section>
 
@@ -157,7 +157,7 @@ export default function Home() {
       <section className="w-full py-16 bg-[var(--color-background-base)] border-b border-white/5">
         <div className="container mx-auto max-w-5xl px-6 md:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-center">What Our Customers Say</h2>
-          <p className="text-neutral-400 text-center mb-12 max-w-xl mx-auto">Trusted by households across Switzerland. Here is what real customers are saying about their IPTV experience.</p>
+          <p className="text-neutral-400 text-center mb-12 max-w-xl mx-auto">Trusted by households across Switzerland. Read more reviews on <a href="https://www.trustpilot.com" target="_blank" rel="noopener noreferrer" className="text-[var(--color-brand-primary)] hover:underline">Trustpilot</a>.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { name: "Marco T.", city: "Z\u00fcrich", text: "Switched from Swisscom Blue TV and saved over CHF 50 per month. The picture quality is actually better, especially for Champions League matches. Setup on my Firestick took 5 minutes.", rating: 5 },
