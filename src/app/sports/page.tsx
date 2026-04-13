@@ -27,7 +27,7 @@ const SPORTS = [
 export default function SportsPage() {
   return (
     <div className="min-h-screen bg-[var(--color-background-base)] pt-32 pb-24">
-      <BreadcrumbSchema items={[{ name: "Home", href: "/home" }, { name: "Live Sports", href: "/sports" }]} />
+      <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Live Sports", href: "/sports" }]} />
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">

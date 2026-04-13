@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[var(--color-background-base)] pt-32 pb-24">
-      <BreadcrumbSchema items={[{ name: "Home", href: "/home" }, { name: "About", href: "/about" }]} />
+      <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "About", href: "/about" }]} />
       <div className="container mx-auto px-4 md:px-8 max-w-4xl">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">About <span className="text-[var(--color-brand-primary)]">Rapid IPTV Swiss</span></h1>

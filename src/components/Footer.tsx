@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/home" className="flex items-center gap-2 mb-6 group">
+            <Link href="/" className="flex items-center gap-2 mb-6 group">
               <Tv className="w-8 h-8 text-[var(--color-brand-primary)]" />
               <span className="text-2xl font-bold tracking-tight text-white">
                 Rapid<span className="text-[var(--color-brand-primary)]">IPTV</span>Swiss
@@ -24,7 +24,7 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               {[
-                { name: "Home", href: "/home" },
+                { name: "Home", href: "/" },
                 { name: "Pricing", href: "/plans" },
                 { name: "Channel List", href: "/live-channels" },
                 { name: "Sports", href: "/sports" },

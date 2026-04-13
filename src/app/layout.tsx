@@ -104,12 +104,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       availability: "https://schema.org/InStock",
       url: "https://rapidiptvswiss.com/plans",
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "312",
-      bestRating: "5",
-    },
   };
 
   return (

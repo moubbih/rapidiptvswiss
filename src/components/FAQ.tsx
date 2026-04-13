@@ -18,7 +18,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Can I watch on multiple devices at the same time?",
-    answer: "Yes. Choose from 1-device or 2-device subscription plans depending on your household needs. Each device gets its own independent stream with no quality loss.",
+    answer: "Yes. Choose from 1 to 5 device subscription plans depending on your household needs. Each device gets its own independent stream with no quality loss. Our family plan (3 devices, 12 months) is the most popular option.",
   },
   {
     question: "What internet speed do I need for 4K IPTV?",
@@ -26,7 +26,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Is there a contract or setup fee?",
-    answer: "No. Rapid IPTV Swiss has zero hidden fees and no contracts. Plans start at CHF 14.99 per month. You pay only for the duration you choose and can cancel anytime.",
+    answer: "No. Rapid IPTV Swiss has zero hidden fees and no contracts. Plans start at CHF 29.99 for 3 months (just CHF 10.00/mo), with our best value 12-month plan at CHF 5.00/mo. You pay once for the duration you choose.",
   },
   {
     question: "How does this compare to Swisscom TV or Sunrise TV?",
@@ -49,19 +49,8 @@ const FAQ_ITEMS = [
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: FAQ_ITEMS.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
-    })),
-  };
-
   return (
     <div className="w-full py-24 bg-[#060609]">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="container mx-auto px-4 md:px-8 max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Frequently Asked <span className="text-[var(--color-brand-primary)]">Questions</span></h2>

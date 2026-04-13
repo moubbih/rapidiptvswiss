@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function FAQPage() {
   return (
     <div className="min-h-screen bg-[var(--color-background-base)] pt-24">
-      <BreadcrumbSchema items={[{ name: "Home", href: "/home" }, { name: "FAQ", href: "/faq" }]} />
+      <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "FAQ", href: "/faq" }]} />
       <FAQ />
     </div>
   );

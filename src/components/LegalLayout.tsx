@@ -5,7 +5,7 @@ export default function LegalLayout({ title, children }: { title: string; childr
   return (
     <div className="min-h-screen bg-[var(--color-background-base)] pt-32 pb-24">
       <div className="container mx-auto px-4 md:px-8 max-w-4xl">
-        <Link href="/home" className="inline-flex items-center text-[var(--color-brand-primary)] hover:text-white transition-colors mb-8">
+        <Link href="/" className="inline-flex items-center text-[var(--color-brand-primary)] hover:text-white transition-colors mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
         </Link>
         <div className="bg-[var(--color-background-surface)] border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">

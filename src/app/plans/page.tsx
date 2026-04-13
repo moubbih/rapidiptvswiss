@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Home", href: "/home" }, { name: "Pricing Plans", href: "/plans" }]} />
+      <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Pricing Plans", href: "/plans" }]} />
       <PricingPage />
     </>
   );

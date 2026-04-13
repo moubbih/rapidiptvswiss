@@ -14,7 +14,7 @@ const GENRES = ["Action", "Comedy", "Drama", "Sci-Fi", "Horror", "Documentary", 
 export default function MoviesSeriesPage() {
   return (
     <div className="min-h-screen bg-[var(--color-background-base)] pt-32 pb-24">
-      <BreadcrumbSchema items={[{ name: "Home", href: "/home" }, { name: "Movies & Series", href: "/movies-series" }]} />
+      <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Movies & Series", href: "/movies-series" }]} />
       <div className="container mx-auto px-4 md:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">IPTV <span className="text-[var(--color-brand-primary)]">Movies &amp; Series</span></h1>

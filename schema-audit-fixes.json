@@ -1,0 +1,162 @@
+{
+  "fixes": [
+    {
+      "id": "FIX-01",
+      "severity": "HIGH",
+      "file": "src/components/FAQ.tsx",
+      "issue": "FAQPage schema restricted to government/healthcare sites since August 2023",
+      "action": "Remove FAQPage schema entirely",
+      "details": "Google restricted FAQPage rich results to government and healthcare authority websites. rapidiptvswiss.com is a commercial IPTV provider and will not receive FAQ rich results. The schema wastes crawl budget validation and may trigger warnings in Search Console."
+    },
+    {
+      "id": "FIX-02",
+      "severity": "HIGH",
+      "file": "src/app/layout.tsx",
+      "issue": "SoftwareApplication schema has AggregateRating with no linked reviews",
+      "action": "Either add Review objects or remove aggregateRating to avoid manual action risk",
+      "details": "Google's review snippet guidelines require that ratings come from actual user reviews. Fabricated or unsupported aggregateRating data can result in a manual action. The same issue exists on the Product schema in PricingPageClient.tsx."
+    },
+    {
+      "id": "FIX-03",
+      "severity": "MEDIUM",
+      "file": "src/app/layout.tsx",
+      "issue": "SoftwareApplication Offer missing 'seller' property",
+      "action": "Add seller Organization reference",
+      "fix_json": {
+        "seller": {
+          "@type": "Organization",
+          "name": "Rapid IPTV Swiss",
+          "url": "https://rapidiptvswiss.com"
+        }
+      }
+    },
+    {
+      "id": "FIX-04",
+      "severity": "MEDIUM",
+      "file": "src/app/layout.tsx",
+      "issue": "Organization schema missing 'sameAs' for social profiles",
+      "action": "Add sameAs array with any official social media URLs",
+      "fix_json": {
+        "sameAs": [
+          "https://twitter.com/rapidiptvswiss"
+        ]
+      }
+    },
+    {
+      "id": "FIX-05",
+      "severity": "MEDIUM",
+      "file": "src/app/home/page.tsx",
+      "issue": "BreadcrumbList has 'Home' pointing to /home instead of /",
+      "action": "First breadcrumb item should point to root URL https://rapidiptvswiss.com/",
+      "fix_code": "items={[{ name: \"Home\", href: \"/\" }, { name: \"IPTV Switzerland\", href: \"/home\" }]}"
+    },
+    {
+      "id": "FIX-06",
+      "severity": "MEDIUM",
+      "file": "src/app/plans/page.tsx",
+      "issue": "BreadcrumbList 'Home' href is /home instead of /",
+      "action": "Change first breadcrumb item href from /home to /",
+      "fix_code": "items={[{ name: \"Home\", href: \"/\" }, { name: \"Pricing Plans\", href: \"/plans\" }]}"
+    },
+    {
+      "id": "FIX-07",
+      "severity": "MEDIUM",
+      "file": "src/app/faq/page.tsx",
+      "issue": "BreadcrumbList 'Home' href is /home instead of /",
+      "action": "Change first breadcrumb item href from /home to /"
+    },
+    {
+      "id": "FIX-08",
+      "severity": "MEDIUM",
+      "file": "src/components/BlogPostTemplate.tsx",
+      "issue": "BreadcrumbList 'Home' href is /home instead of /, and 'Blog' points to /articles",
+      "action": "Change Home href to / and ensure Blog href matches the actual blog index URL"
+    },
+    {
+      "id": "FIX-09",
+      "severity": "MEDIUM",
+      "file": "src/app/plans/PricingPageClient.tsx",
+      "issue": "Product schema missing 'bestRating' in AggregateRating",
+      "action": "Add bestRating: '5' to aggregateRating",
+      "fix_json": {
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "312",
+          "bestRating": "5"
+        }
+      }
+    },
+    {
+      "id": "FIX-10",
+      "severity": "LOW",
+      "file": "src/app/layout.tsx",
+      "issue": "WebSite SearchAction target points to /articles?q= -- verify this URL actually works",
+      "action": "Confirm https://rapidiptvswiss.com/articles?q={query} returns search results, or remove SearchAction"
+    },
+    {
+      "id": "FIX-11",
+      "severity": "LOW",
+      "file": "src/components/BlogPostTemplate.tsx",
+      "issue": "BlogPosting publisher logo uses favicon.ico instead of a proper logo image",
+      "action": "Use a proper logo image (min 112px wide, PNG/JPG)",
+      "fix_json": {
+        "publisher": {
+          "@type": "Organization",
+          "name": "Rapid IPTV Swiss",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://rapidiptvswiss.com/hero_bg.webp",
+            "width": 1200,
+            "height": 630
+          }
+        }
+      }
+    },
+    {
+      "id": "FIX-12",
+      "severity": "LOW",
+      "file": "src/components/BlogPostTemplate.tsx",
+      "issue": "BlogPosting dateModified always equals datePublished",
+      "action": "Track actual modification dates separately; identical dates signal stale content to Google"
+    },
+    {
+      "id": "FIX-13",
+      "severity": "OPPORTUNITY",
+      "file": "src/app/plans/PricingPageClient.tsx",
+      "issue": "Only one Product schema for the 3-device/12-month plan",
+      "action": "Consider adding an OfferCatalog or multiple Product schemas covering all plan variants for richer coverage"
+    },
+    {
+      "id": "FIX-14",
+      "severity": "OPPORTUNITY",
+      "file": "src/app/layout.tsx",
+      "issue": "No Service schema for the IPTV service itself",
+      "action": "Add Service schema alongside or instead of SoftwareApplication",
+      "fix_json": {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Rapid IPTV Swiss",
+        "serviceType": "IPTV Streaming Service",
+        "provider": {
+          "@type": "Organization",
+          "name": "Rapid IPTV Swiss",
+          "url": "https://rapidiptvswiss.com"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Switzerland"
+        },
+        "description": "Premium IPTV subscription service in Switzerland with 30,000+ live channels and 150,000+ VOD titles in 4K Ultra HD.",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "5.00",
+          "highPrice": "139.99",
+          "priceCurrency": "CHF",
+          "offerCount": "15"
+        },
+        "url": "https://rapidiptvswiss.com/plans"
+      }
+    }
+  ]
+}

@@ -8,7 +8,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import AnimatedMenu from "./ui/animated-menu";
 
 const MAIN_NAV_LINKS = [
-  { name: "Home", href: "/home" },
+  { name: "Home", href: "/" },
   { name: "Pricing", href: "/plans" },
   { name: "Channels", href: "/live-channels" },
   { name: "Setup Guides", href: "/installation-guide" },
@@ -44,7 +44,7 @@ export default function Navbar() {
         )}
       >
         <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-          <Link href="/home" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2 group">
             <Tv className="w-7 h-7 md:w-8 md:h-8 text-[var(--color-brand-primary)] group-hover:text-[var(--color-brand-secondary)] transition-colors" />
             <span className="text-xl md:text-2xl font-bold tracking-tight text-white">
               Rapid<span className="text-[var(--color-brand-primary)]">IPTV</span>Swiss

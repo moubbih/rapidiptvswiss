@@ -63,7 +63,7 @@ export default function BlogPostTemplate({
     publisher: {
       "@type": "Organization",
       name: "Rapid IPTV Swiss",
-      logo: { "@type": "ImageObject", url: "https://rapidiptvswiss.com/favicon.ico" },
+      logo: { "@type": "ImageObject", url: "https://rapidiptvswiss.com/hero_bg.webp", width: 1200, height: 630 },
     },
     datePublished: `${post.publishedDate}T00:00:00Z`,
     dateModified: `${post.publishedDate}T00:00:00Z`,
@@ -87,7 +87,7 @@ export default function BlogPostTemplate({
       <StructuredData data={blogSchema} id="blog-schema" />
       <BreadcrumbSchema
         items={[
-          { name: "Home", href: "/home" },
+          { name: "Home", href: "/" },
           { name: "Blog", href: "/articles" },
           { name: post.title, href: `/blog/${post.slug}` },
         ]}
