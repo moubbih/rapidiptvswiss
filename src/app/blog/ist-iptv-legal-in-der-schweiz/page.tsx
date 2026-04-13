@@ -11,32 +11,30 @@ export function generateMetadata(): Metadata {
   return {
     title: post.title + " | Rapid IPTV Swiss",
     description: post.metaDescription,
-    alternates: { canonical: `/blog/${SLUG}` },
+    alternates: {
+      canonical: `/blog/${SLUG}`,
+      languages: {
+        "en-CH": "/blog/is-iptv-legal-in-switzerland",
+        "de-CH": "/blog/ist-iptv-legal-in-der-schweiz",
+        "fr-CH": "/blog/iptv-est-il-legal-en-suisse",
+        "x-default": "/blog/is-iptv-legal-in-switzerland",
+      },
+    },
     openGraph: {
-      title: post.title,
-      description: post.metaDescription,
+      title: post.title, description: post.metaDescription,
       url: `https://rapidiptvswiss.com/blog/${SLUG}`,
       siteName: "Rapid IPTV Swiss",
       images: [{ url: post.heroImage, width: 1200, height: 630, alt: post.altText }],
-      type: "article",
-      publishedTime: post.publishedDate + "T00:00:00Z",
+      type: "article", publishedTime: post.publishedDate + "T00:00:00Z",
     },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.metaDescription,
-      images: [post.heroImage],
-    },
+    twitter: { card: "summary_large_image", title: post.title, description: post.metaDescription, images: [post.heroImage] },
   };
 }
 
 export default function Page() {
   if (!post) notFound();
   const related = ALL_BLOG_POSTS.filter((p) => p.slug !== SLUG).slice(0, 3).map((p) => ({
-    title: p.title,
-    slug: p.slug,
-    excerpt: p.excerpt,
-    category: p.category,
+    title: p.title, slug: p.slug, excerpt: p.excerpt, category: p.category,
   }));
   return <BlogPostTemplate post={post} relatedPosts={related} />;
 }

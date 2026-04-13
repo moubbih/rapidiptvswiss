@@ -7,7 +7,7 @@ export interface FullBlogPost {
   excerpt: string;
   publishedDate: string;
   category: string;
-  lang: "en" | "de" | "fr";
+  lang: "en" | "de" | "fr" | "it";
   altText: string;
   metaDescription: string;
   content: BlogContentBlock[];

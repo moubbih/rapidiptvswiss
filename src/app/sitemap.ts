@@ -27,6 +27,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/privacy`, lastModified: new Date("2026-03-01") },
     { url: `${BASE_URL}/refunds`, lastModified: new Date("2026-03-01") },
     { url: `${BASE_URL}/cancellations`, lastModified: new Date("2026-03-01") },
+    { url: `${BASE_URL}/impressum`, lastModified: new Date("2026-04-13") },
+    { url: `${BASE_URL}/iptv-zurich`, lastModified: new Date("2026-04-13") },
+    { url: `${BASE_URL}/iptv-geneve`, lastModified: new Date("2026-04-13") },
+    { url: `${BASE_URL}/iptv-basel`, lastModified: new Date("2026-04-13") },
+    { url: `${BASE_URL}/iptv-bern`, lastModified: new Date("2026-04-13") },
+    { url: `${BASE_URL}/iptv-lausanne`, lastModified: new Date("2026-04-13") },
+    { url: `${BASE_URL}/iptv-lugano`, lastModified: new Date("2026-04-13") },
   ];
 
   const blogRoutes: MetadataRoute.Sitemap = ALL_BLOG_POSTS.map((post) => ({

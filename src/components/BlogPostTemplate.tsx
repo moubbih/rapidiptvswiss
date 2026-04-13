@@ -17,7 +17,7 @@ interface BlogPostData {
   excerpt: string;
   publishedDate: string;
   category: string;
-  lang: "en" | "de" | "fr";
+  lang: "en" | "de" | "fr" | "it";
   metaDescription: string;
   content: BlogContentBlock[];
 }
