@@ -90,6 +90,19 @@ const PAYMENT_METHODS = [
 export default function PricingPage() {
   const [devices, setDevices] = useState(1);
 
+  const openPaymentPopup = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault();
+    const width = 500;
+    const height = 800;
+    const left = (window.screen.width - width) / 2;
+    const top = (window.screen.height - height) / 2;
+    window.open(
+      url,
+      "PaymentCheckout",
+      `width=${width},height=${height},top=${top},left=${left},scrollbars=yes,resizable=yes`
+    );
+  };
+
   /* Product schema for the most popular plan: 3 devices / 12 months */
   const productSchema = {
     "@context": "https://schema.org",
@@ -152,8 +165,7 @@ export default function PricingPage() {
           <div className="mt-2 mb-4">
             <a
               href="https://flujipay.com/payment/D4SYNKFOVJ5DFWSQ78NGGBSSWIC3VVZH"
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={(e) => openPaymentPopup(e, "https://flujipay.com/payment/D4SYNKFOVJ5DFWSQ78NGGBSSWIC3VVZH")}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30 text-amber-300 border border-amber-500/30 hover:border-amber-500/50 transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-orange-950/20"
             >
               <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
@@ -278,8 +290,10 @@ export default function PricingPage() {
                 <div className="mt-auto">
                   <a
                     href={PAYMENT_LINKS[devices]?.[plan.months] || "#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      const link = PAYMENT_LINKS[devices]?.[plan.months];
+                      if (link) openPaymentPopup(e, link);
+                    }}
                     className={`block w-full text-center py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:scale-[1.02] ${
                       isHighlight
                         ? "bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-secondary)] text-white shadow-lg shadow-blue-500/20"

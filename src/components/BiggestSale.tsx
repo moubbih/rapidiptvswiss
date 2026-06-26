@@ -31,6 +31,19 @@ const DEALS = [
 ];
 
 export default function BiggestSale() {
+  const openPaymentPopup = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault();
+    const width = 500;
+    const height = 800;
+    const left = (window.screen.width - width) / 2;
+    const top = (window.screen.height - height) / 2;
+    window.open(
+      url,
+      "PaymentCheckout",
+      `width=${width},height=${height},top=${top},left=${left},scrollbars=yes,resizable=yes`
+    );
+  };
+
   return (
     <section className="w-full py-20 md:py-28 relative overflow-hidden bg-[#060609]">
       {/* Subtle gradient glow */}
@@ -127,8 +140,7 @@ export default function BiggestSale() {
                   {/* CTA */}
                   <a
                     href={deal.paymentLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    onClick={(e) => openPaymentPopup(e, deal.paymentLink)}
                     className={`flex items-center justify-center gap-2 w-full py-4 rounded-xl font-bold text-base transition-all duration-300 hover:scale-[1.02] ${
                       isFeatured
                         ? "bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-secondary)] text-white shadow-lg shadow-blue-500/25"

@@ -46,6 +46,19 @@ export default function Pricing() {
 
   const getPrice = (months: "3" | "6" | "12") => PRICE_TABLE[devices][months];
 
+  const openPaymentPopup = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    e.preventDefault();
+    const width = 500;
+    const height = 800;
+    const left = (window.screen.width - width) / 2;
+    const top = (window.screen.height - height) / 2;
+    window.open(
+      url,
+      "PaymentCheckout",
+      `width=${width},height=${height},top=${top},left=${left},scrollbars=yes,resizable=yes`
+    );
+  };
+
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -179,8 +192,7 @@ export default function Pricing() {
 
                 <a
                   href={PAYMENT_LINKS[devices][plan.months]}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={(e) => openPaymentPopup(e, PAYMENT_LINKS[devices][plan.months])}
                   className={`block w-full text-center py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-[1.02] ${
                     isHighlight
                       ? "bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-secondary)] text-white shadow-lg shadow-blue-500/20"
