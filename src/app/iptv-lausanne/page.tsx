@@ -6,7 +6,7 @@ import StructuredData from "@/components/StructuredData";
 export const metadata: Metadata = {
   title: "IPTV Lausanne | Best IPTV Service in Lausanne 2026",
   description:
-    "Top IPTV in Lausanne with 30,000+ channels in 4K. Watch FC Lausanne-Sport, RTS, French channels live. Plans from CHF 5.00/mo. Olympic capital streaming.",
+    "Top IPTV in Lausanne with 19,000+ channels in 4K. Watch FC Lausanne-Sport, RTS, French channels live. Plans from $6.08/mo. Olympic capital streaming.",
   alternates: { canonical: "/iptv-lausanne" },
 };
 
@@ -16,7 +16,7 @@ export default function IPTVLausannePage() {
     "@type": "LocalBusiness",
     name: "Rapid IPTV Swiss - Lausanne",
     description:
-      "Premium IPTV service provider serving Lausanne, Switzerland with 30,000+ live channels, movies, and series.",
+      "Premium IPTV service provider serving Lausanne, Switzerland with 19,000+ live channels, movies, and series.",
     url: "https://rapidiptvswiss.com/iptv-lausanne",
     areaServed: {
       "@type": "City",
@@ -26,7 +26,7 @@ export default function IPTVLausannePage() {
         name: "Switzerland",
       },
     },
-    priceRange: "CHF 5.00 - CHF 13.00",
+    priceRange: "$6.08 - $12.99",
     sameAs: "https://rapidiptvswiss.com",
   };
 
@@ -46,7 +46,7 @@ export default function IPTVLausannePage() {
         </h1>
 
         <p className="text-lg text-[var(--color-text-secondary)] mb-6 leading-relaxed">
-          Lausanne is the Olympic capital of the world, home to the International Olympic Committee and a vibrant cultural scene on the shores of Lake Geneva. With a population passionate about sports, arts, and education, Lausanne deserves top-tier entertainment. Rapid IPTV Swiss delivers over 30,000 live channels, thousands of movies and series, and pristine 4K streaming to households across the city.
+          Lausanne is the Olympic capital of the world, home to the International Olympic Committee and a vibrant cultural scene on the shores of Lake Geneva. With a population passionate about sports, arts, and education, Lausanne deserves top-tier entertainment. Rapid IPTV Swiss delivers over 19,000 live channels, thousands of movies and series, and pristine 4K streaming to households across the city.
         </p>
 
         <h2 className="text-2xl md:text-3xl font-semibold text-white mt-12 mb-6">
@@ -104,10 +104,10 @@ export default function IPTVLausannePage() {
         </p>
 
         <h2 className="text-2xl md:text-3xl font-semibold text-white mt-12 mb-6">
-          Plans Starting at CHF 5.00/Month
+          Plans Starting at $6.08/mo
         </h2>
         <p className="text-[var(--color-text-secondary)] mb-6 leading-relaxed">
-          Get access to everything for as little as CHF 5.00 per month on a 12-month plan. We also offer 3-month and 6-month subscriptions with support for 1 to 5 devices. Every plan includes 30,000+ live channels, Video on Demand, catch-up TV, and EPG. No hidden fees and no long-term commitments.
+          Get access to everything for as little as $6.08 per month on a 12-month plan. We also offer 3-month and 6-month subscriptions with support for 1 to 5 devices. Every plan includes 19,000+ live channels, Video on Demand, catch-up TV, and EPG. No hidden fees and no long-term commitments.
         </p>
         <p className="text-[var(--color-text-secondary)] mb-6 leading-relaxed">
           We accept TWINT, credit cards, PayPal, and cryptocurrency. Check all our options on the{" "}

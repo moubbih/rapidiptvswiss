@@ -4,13 +4,42 @@ import { useState } from "react";
 import { Check, Users, Tv, Sparkles, CreditCard, Shield } from "lucide-react";
 import StructuredData from "@/components/StructuredData";
 
-/* ── Exact pricing grid (all in CHF) ─────────────────────── */
+/* ── Exact pricing grid (all in USD) ─────────────────────── */
 const PRICE_TABLE: Record<number, { "3": number; "6": number; "12": number }> = {
-  1: { "3": 29.99, "6": 44.99, "12": 59.99 },
-  2: { "3": 39.99, "6": 59.99, "12": 79.99 },
-  3: { "3": 49.99, "6": 74.99, "12": 99.99 },
-  4: { "3": 59.99, "6": 89.99, "12": 119.99 },
-  5: { "3": 69.99, "6": 104.99, "12": 139.99 },
+  1: { "3": 31.99, "6": 44.99, "12": 72.98 },
+  2: { "3": 42.99, "6": 60.99, "12": 99.99 },
+  3: { "3": 55.99, "6": 85.99, "12": 149.99 },
+  4: { "3": 84.99, "6": 109.99, "12": 179.99 },
+  5: { "3": 92.99, "6": 129.99, "12": 198.99 },
+};
+
+const PAYMENT_LINKS: Record<number, Record<string, string>> = {
+  1: {
+    "1": "https://flujipay.com/payment/D4SYNKFOVJ5DFWSQ78NGGBSSWIC3VVZH",
+    "3": "https://flujipay.com/payment/JP77DBEZ8QOFRSAT5TY6EFKCPAV3JU1Z",
+    "6": "https://flujipay.com/payment/QIBYNKJNPQXLID1Y4GVFDPJOBBDSIQHQ",
+    "12": "https://flujipay.com/payment/RY0GRASNLWXGSTHJUHTWZQHMLZQLYFDX",
+  },
+  2: {
+    "3": "https://flujipay.com/payment/Z5G6DD7DBNWTWNIYYP6CRFG4B7PRPAFV",
+    "6": "https://flujipay.com/payment/MSI861IBDXQSVOJ5KXS4FSIMSDVAMBKO",
+    "12": "https://flujipay.com/payment/BWEWVKSUSDACQBCYT6IC4EFLC2E1VKMJ",
+  },
+  3: {
+    "3": "https://flujipay.com/payment/HEQMAAESEZ47HFYCSPNV0HNBK0VSG6MS",
+    "6": "https://flujipay.com/payment/ZXQATQOTEEMNA9KEEMPSMXHACHXGM6PK",
+    "12": "https://flujipay.com/payment/QR6ZLL8VGYQTGIVJCQOARXAJY2XLFX0P",
+  },
+  4: {
+    "3": "https://flujipay.com/payment/XOQDPYEH6TDRQXWWKO2HOPLQCCNKZ4LM",
+    "6": "https://flujipay.com/payment/VIAWCDBZZDAEOQXMU2ABYQB4BMJFYIAL",
+    "12": "https://flujipay.com/payment/HHTW5RX2RTBHDLJF7MDTIFZBGCHVZYOV",
+  },
+  5: {
+    "3": "https://flujipay.com/payment/VWANHNNVRTRIQWREMOXVY8MPW9MX4Z1L",
+    "6": "https://flujipay.com/payment/2LRJGBKPZLKUFVS8L6HIIHSGUD3PWUCW",
+    "12": "https://flujipay.com/payment/WQXO8JCV3LNS3RJNEZRNNGJW2HP1BOAQ",
+  },
 };
 
 const DEVICE_LABELS: Record<number, string> = {
@@ -30,7 +59,7 @@ const DURATIONS = [
 const DEVICE_OPTIONS = [1, 2, 3, 4, 5] as const;
 
 const FEATURES = [
-  "30,000+ live channels",
+  "19,000+ live channels",
   "150,000+ VOD",
   "4K UHD quality",
   "Anti-freeze technology",
@@ -67,13 +96,13 @@ export default function PricingPage() {
     "@type": "Product",
     name: "Rapid IPTV Swiss \u2014 Family Plan 12 Months",
     description:
-      "Premium IPTV subscription for Switzerland. 3 devices, 12 months. 30,000+ live channels including SRF, RTS, RSI. 150,000+ VOD in 4K Ultra HD. Anti-freeze technology.",
+      "Premium IPTV subscription for Switzerland. 3 devices, 12 months. 19,000+ live channels including SRF, RTS, RSI. 150,000+ VOD in 4K Ultra HD. Anti-freeze technology.",
     image: "https://rapidiptvswiss.com/hero_bg.webp",
     brand: { "@type": "Brand", name: "Rapid IPTV Swiss" },
     offers: {
       "@type": "Offer",
-      price: "99.99",
-      priceCurrency: "CHF",
+      price: "149.99",
+      priceCurrency: "USD",
       availability: "https://schema.org/InStock",
       url: "https://rapidiptvswiss.com/plans",
       priceValidUntil: "2026-12-31",
@@ -92,7 +121,7 @@ export default function PricingPage() {
           &mdash; Pricing
         </h1>
         <p className="text-neutral-400 text-base md:text-lg max-w-2xl mx-auto">
-          Transparent pricing in CHF. No hidden fees, no contracts. Instant
+          Transparent pricing in USD. No hidden fees, no contracts. Instant
           activation. Choose your devices and plan duration below.
         </p>
       </div>
@@ -119,6 +148,19 @@ export default function PricingPage() {
               </button>
             ))}
           </div>
+          {/* 1 Month Quick Trial Button */}
+          <div className="mt-2 mb-4">
+            <a
+              href="https://flujipay.com/payment/D4SYNKFOVJ5DFWSQ78NGGBSSWIC3VVZH"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30 text-amber-300 border border-amber-500/30 hover:border-amber-500/50 transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-orange-950/20"
+            >
+              <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
+              <span>1 Month Quick Trial &mdash; $12.99</span>
+            </a>
+          </div>
+
           <div className="flex items-center gap-3 mt-1">
             <span className="text-neutral-500 text-sm">
               {DEVICE_LABELS[devices]}
@@ -184,13 +226,13 @@ export default function PricingPage() {
                           : "text-white"
                       }`}
                     >
-                      CHF {total}
+                      $&nbsp;{total}
                     </span>
                   </div>
 
                   {/* Per month */}
                   <p className="text-neutral-400 text-sm mt-2">
-                    CHF {monthly}/mo &middot; {devices} device
+                    $&nbsp;{monthly}/mo &middot; {devices} device
                     {devices > 1 ? "s" : ""}
                   </p>
 
@@ -235,11 +277,7 @@ export default function PricingPage() {
                 {/* CTA */}
                 <div className="mt-auto">
                   <a
-                    href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
-                      `Hi, I'd like to order the ${plan.label} IPTV plan for ${devices} device${
-                        devices > 1 ? "s" : ""
-                      } (CHF ${total})`
-                    )}`}
+                    href={PAYMENT_LINKS[devices]?.[plan.months] || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`block w-full text-center py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:scale-[1.02] ${
@@ -261,16 +299,16 @@ export default function PricingPage() {
       <div className="container mx-auto px-4 md:px-8 mt-14">
         <div className="max-w-3xl mx-auto bg-[var(--color-background-surface)] border border-white/5 rounded-2xl p-6 md:p-8 text-center">
           <p className="text-neutral-300 text-sm md:text-base leading-relaxed">
-            Traditional Swiss cable TV costs{" "}
+            Traditional cable TV costs{" "}
             <span className="text-white font-semibold">
-              CHF 40&ndash;60/month
+              $40&ndash;$60/month
             </span>
             . With Rapid IPTV Swiss, get{" "}
             <span className="text-[var(--color-brand-primary)] font-semibold">
               10x more content
             </span>{" "}
             starting at just{" "}
-            <span className="text-white font-semibold">CHF 5.00/mo</span>.
+            <span className="text-white font-semibold">$6.08/mo</span>.
           </p>
         </div>
       </div>
@@ -278,7 +316,7 @@ export default function PricingPage() {
       {/* ── Full comparison table ───────────────────────────── */}
       <div className="container mx-auto px-4 md:px-8 mt-20">
         <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8">
-          All IPTV Plans at a Glance (CHF)
+          All IPTV Plans at a Glance (USD)
         </h2>
         <div className="max-w-5xl mx-auto overflow-x-auto">
           <table className="w-full text-sm border-collapse">
@@ -342,10 +380,10 @@ export default function PricingPage() {
                         }`}
                       >
                         <span className="font-bold text-white">
-                          CHF {price}
+                          $&nbsp;{price}
                         </span>
                         <span className="block text-xs text-neutral-500">
-                          CHF {mo}/mo
+                          $&nbsp;{mo}/mo
                         </span>
                         {isMostPopular && (
                           <span className="inline-block mt-1 text-[9px] bg-blue-500/15 text-blue-400 px-2 py-0.5 rounded-full font-bold uppercase">
@@ -386,7 +424,7 @@ export default function PricingPage() {
           <div className="flex items-center justify-center gap-2 text-neutral-500 text-sm">
             <Shield className="w-4 h-4" />
             <span>
-              Secure payments &middot; All prices in Swiss Francs (CHF)
+              Secure payments &middot; All prices in USD ($)
               &middot; Instant activation
             </span>
           </div>

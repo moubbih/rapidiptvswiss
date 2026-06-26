@@ -12,11 +12,11 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 export const metadata: Metadata = {
   metadataBase: new URL("https://rapidiptvswiss.com"),
   title: {
-    default: "Best IPTV Switzerland 2026 | 30,000+ Channels in 4K",
+    default: "Best IPTV Switzerland 2026 | 19,000+ Channels in 4K",
     template: "%s | Rapid IPTV Swiss",
   },
   description:
-    "Best IPTV subscription in Switzerland 2026. 30,000+ live channels including SRF, RTS, RSI in 4K Ultra HD. Plans from CHF 5.00/mo.",
+    "Best IPTV subscription in Switzerland 2026. 19,000+ live channels including SRF, RTS, RSI in 4K Ultra HD. Plans from $6.08/mo.",
   keywords: [
     "IPTV Switzerland",
     "IPTV Swiss",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   publisher: "Rapid IPTV Swiss",
   openGraph: {
     title: "Best IPTV Switzerland 2026 | Rapid IPTV Swiss",
-    description: "Stream 30,000+ live channels including SRF, RTS, RSI in 4K Ultra HD. Buffer-free IPTV built for Swiss homes. Plans from CHF 5.00/mo.",
+    description: "Stream 19,000+ live channels including SRF, RTS, RSI in 4K Ultra HD. Buffer-free IPTV built for Swiss homes. Plans from $6.08/mo.",
     url: "https://rapidiptvswiss.com",
     siteName: "Rapid IPTV Swiss",
     images: [{ url: "/hero_bg.webp", width: 1200, height: 630, alt: "Rapid IPTV Swiss \u2014 Premium IPTV Streaming in Switzerland" }],
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Best IPTV Switzerland 2026 | Rapid IPTV Swiss",
-    description: "30,000+ channels, Live Sports, 150,000+ Movies & Series in 4K. The best IPTV provider in Switzerland.",
+    description: "19,000+ channels, Live Sports, 150,000+ Movies & Series in 4K. The best IPTV provider in Switzerland.",
     images: ["/hero_bg.webp"],
     site: "@rapidiptvswiss",
   },
@@ -62,7 +62,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     name: "Rapid IPTV Swiss",
     url: "https://rapidiptvswiss.com",
     logo: { "@type": "ImageObject", url: "https://rapidiptvswiss.com/hero_bg.webp", width: 1200, height: 630 },
-    description: "Premium IPTV subscription service in Switzerland offering 30,000+ live channels, 150,000+ movies and series in 4K Ultra HD.",
+    description: "Premium IPTV subscription service in Switzerland offering 19,000+ live channels, 150,000+ movies and series in 4K Ultra HD.",
     foundingDate: "2024-01-01",
     areaServed: { "@type": "Country", name: "Switzerland" },
     contactPoint: {
@@ -94,12 +94,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     name: "Rapid IPTV Swiss",
     applicationCategory: "MultimediaApplication",
     operatingSystem: "Android, iOS, Windows, macOS, Fire OS, Tizen, WebOS",
-    description: "Premium IPTV streaming service for Switzerland with 30,000+ live channels, 150,000+ VOD titles, 4K Ultra HD, anti-freeze technology.",
+    description: "Premium IPTV streaming service for Switzerland with 19,000+ live channels, 150,000+ VOD titles, 4K Ultra HD, anti-freeze technology.",
     url: "https://rapidiptvswiss.com",
     offers: {
       "@type": "Offer",
       price: "29.99",
-      priceCurrency: "CHF",
+      priceCurrency: "USD",
       priceValidUntil: "2026-12-31",
       availability: "https://schema.org/InStock",
       url: "https://rapidiptvswiss.com/plans",

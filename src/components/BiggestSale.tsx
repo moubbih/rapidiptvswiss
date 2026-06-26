@@ -6,23 +6,27 @@ const WA_NUMBER = "15595082154";
 
 const DEALS = [
   {
-    duration: "12 Months",
-    salePrice: 83.99,
-    originalPrice: 179.88,
+    duration: "2 Years",
+    salePrice: 79.00,
+    originalPrice: 99.00,
     connections: 1,
-    perMonth: "7.00",
+    perMonth: "3.29",
     tag: "Great Value",
-    features: ["30,000+ channels", "4K Ultra HD", "Anti-freeze tech", "All devices"],
+    currency: "€",
+    paymentLink: "https://flujipay.com/payment/E91LJ6EXX5MPSFDDPRSCPOLT1YXALTVT",
+    features: ["19,000+ channels", "4K Ultra HD", "Anti-freeze tech", "All devices"],
   },
   {
-    duration: "24 Months",
-    salePrice: 149.99,
-    originalPrice: 359.76,
+    duration: "5 Years",
+    salePrice: 149.00,
+    originalPrice: 279.00,
     connections: 1,
-    perMonth: "6.25",
-    tag: "Best Long-Term Deal",
+    perMonth: "2.48",
+    tag: "Ultimate Value Deal",
     isFeatured: true,
-    features: ["30,000+ channels", "4K Ultra HD", "Anti-freeze tech", "All devices", "Free VPN included", "Priority support"],
+    currency: "€",
+    paymentLink: "https://flujipay.com/payment/X7IX1B1LZBVDYJTBGCX69YSBCUJCDRMM",
+    features: ["19,000+ channels", "4K Ultra HD", "Anti-freeze tech", "All devices", "Free VPN included", "Priority support"],
   },
 ];
 
@@ -96,16 +100,16 @@ export default function BiggestSale() {
                   {/* Price block */}
                   <div className="flex items-end gap-3 mb-1">
                     <span className="text-4xl md:text-5xl font-extrabold text-white leading-none">
-                      CHF&nbsp;{deal.salePrice}
+                      {deal.currency}&nbsp;{deal.salePrice}
                     </span>
                     <span className="text-base text-neutral-500 line-through mb-1">
-                      CHF&nbsp;{deal.originalPrice}
+                      {deal.currency}&nbsp;{deal.originalPrice}
                     </span>
                   </div>
                   <p className="text-sm text-neutral-400 mb-6">
                     Just{" "}
                     <span className="text-white font-semibold">
-                      CHF {deal.perMonth}/mo
+                      {deal.currency} {deal.perMonth}/mo
                     </span>{" "}
                     &middot; {deal.connections} device &middot; One-time payment
                   </p>
@@ -122,9 +126,7 @@ export default function BiggestSale() {
 
                   {/* CTA */}
                   <a
-                    href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
-                      `Hi, I'd like the ${deal.duration} Premium IPTV deal for CHF ${deal.salePrice}`
-                    )}`}
+                    href={deal.paymentLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`flex items-center justify-center gap-2 w-full py-4 rounded-xl font-bold text-base transition-all duration-300 hover:scale-[1.02] ${

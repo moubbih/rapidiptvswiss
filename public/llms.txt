@@ -1,12 +1,12 @@
 # Rapid IPTV Swiss
 
-> Premium IPTV subscription service in Switzerland offering 30,000+ live channels, 150,000+ movies and series in 4K Ultra HD. Plans from CHF 5.00/mo with instant activation.
+> Premium IPTV subscription service in Switzerland offering 19,000+ live channels, 150,000+ movies and series in 4K Ultra HD. Plans from $6.08/mo with instant activation.
 
 ## Key Pages
 
 - [Home](https://rapidiptvswiss.com/): Overview of Rapid IPTV Swiss service, pricing, features, and FAQ
-- [Plans & Pricing](https://rapidiptvswiss.com/plans): IPTV subscription plans starting from CHF 5.00/month
-- [Live Channels](https://rapidiptvswiss.com/live-channels): Full list of 30,000+ live TV channels including SRF, RTS, RSI
+- [Plans & Pricing](https://rapidiptvswiss.com/plans): IPTV subscription plans starting from $6.08/month
+- [Live Channels](https://rapidiptvswiss.com/live-channels): Full list of 19,000+ live TV channels including SRF, RTS, RSI
 - [Installation Guide](https://rapidiptvswiss.com/installation-guide): Step-by-step setup instructions for all supported devices
 - [Supported Devices](https://rapidiptvswiss.com/supported-devices): Compatible devices including Fire TV, Smart TV, Android, iOS, Apple TV
 - [FAQ](https://rapidiptvswiss.com/faq): Frequently asked questions about IPTV in Switzerland

@@ -6,7 +6,7 @@ import StructuredData from "@/components/StructuredData";
 export const metadata: Metadata = {
   title: "IPTV Zurich | Best IPTV Service in Zurich 2026",
   description:
-    "Premium IPTV service in Zurich with 30,000+ channels in 4K. Watch FC Zurich, ZSC Lions, SRF and more. Plans from CHF 5.00/mo. Fast setup for Swisscom, Sunrise & Salt.",
+    "Premium IPTV service in Zurich with 19,000+ channels in 4K. Watch FC Zurich, ZSC Lions, SRF and more. Plans from $6.08/mo. Fast setup for Swisscom, Sunrise & Salt.",
   alternates: { canonical: "/iptv-zurich" },
 };
 
@@ -16,7 +16,7 @@ export default function IPTVZurichPage() {
     "@type": "LocalBusiness",
     name: "Rapid IPTV Swiss - Zurich",
     description:
-      "Premium IPTV service provider serving Zurich, Switzerland with 30,000+ live channels, movies, and series.",
+      "Premium IPTV service provider serving Zurich, Switzerland with 19,000+ live channels, movies, and series.",
     url: "https://rapidiptvswiss.com/iptv-zurich",
     areaServed: {
       "@type": "City",
@@ -26,7 +26,7 @@ export default function IPTVZurichPage() {
         name: "Switzerland",
       },
     },
-    priceRange: "CHF 5.00 - CHF 13.00",
+    priceRange: "$6.08 - $12.99",
     sameAs: "https://rapidiptvswiss.com",
   };
 
@@ -46,7 +46,7 @@ export default function IPTVZurichPage() {
         </h1>
 
         <p className="text-lg text-[var(--color-text-secondary)] mb-6 leading-relaxed">
-          Zurich is the largest city in Switzerland and a global financial hub. With a population of over 430,000 residents and a thriving international community, Zurich demands world-class entertainment. Rapid IPTV Swiss delivers exactly that &mdash; over 30,000 live channels, an extensive library of movies and series, and crystal-clear 4K streaming, all optimized for viewers right here in Zurich.
+          Zurich is the largest city in Switzerland and a global financial hub. With a population of over 419,000 residents and a thriving international community, Zurich demands world-class entertainment. Rapid IPTV Swiss delivers exactly that &mdash; over 19,000 live channels, an extensive library of movies and series, and crystal-clear 4K streaming, all optimized for viewers right here in Zurich.
         </p>
 
         <h2 className="text-2xl md:text-3xl font-semibold text-white mt-12 mb-6">
@@ -108,7 +108,7 @@ export default function IPTVZurichPage() {
           Affordable IPTV Plans for Zurich Residents
         </h2>
         <p className="text-[var(--color-text-secondary)] mb-6 leading-relaxed">
-          Premium entertainment should not come with a premium price tag. Our IPTV plans start at just CHF 5.00 per month when you choose an annual subscription. We offer flexible 3-month, 6-month, and 12-month plans with support for up to 5 simultaneous connections. Every plan includes access to 30,000+ live channels, Video on Demand, catch-up TV, and an electronic program guide (EPG).
+          Premium entertainment should not come with a premium price tag. Our IPTV plans start at just $6.08 per month when you choose an annual subscription. We offer flexible 3-month, 6-month, and 12-month plans with support for up to 5 simultaneous connections. Every plan includes access to 19,000+ live channels, Video on Demand, catch-up TV, and an electronic program guide (EPG).
         </p>
         <p className="text-[var(--color-text-secondary)] mb-6 leading-relaxed">
           You can pay with TWINT, credit card, PayPal, or cryptocurrency. There are no contracts, no hidden fees, and you can cancel anytime. Compare all our options on the{" "}

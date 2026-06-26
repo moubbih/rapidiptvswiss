@@ -6,7 +6,7 @@ import StructuredData from "@/components/StructuredData";
 export const metadata: Metadata = {
   title: "IPTV Lugano | Best IPTV Service in Lugano 2026",
   description:
-    "Best IPTV in Lugano with 30,000+ channels in 4K. Watch FC Lugano, RSI, Italian channels live. Plans from CHF 5.00/mo. Perfect for Ticino residents.",
+    "Best IPTV in Lugano with 19,000+ channels in 4K. Watch FC Lugano, RSI, Italian channels live. Plans from $6.08/mo. Perfect for Ticino residents.",
   alternates: { canonical: "/iptv-lugano" },
 };
 
@@ -16,7 +16,7 @@ export default function IPTVLuganoPage() {
     "@type": "LocalBusiness",
     name: "Rapid IPTV Swiss - Lugano",
     description:
-      "Premium IPTV service provider serving Lugano, Switzerland with 30,000+ live channels, movies, and series.",
+      "Premium IPTV service provider serving Lugano, Switzerland with 19,000+ live channels, movies, and series.",
     url: "https://rapidiptvswiss.com/iptv-lugano",
     areaServed: {
       "@type": "City",
@@ -26,7 +26,7 @@ export default function IPTVLuganoPage() {
         name: "Switzerland",
       },
     },
-    priceRange: "CHF 5.00 - CHF 13.00",
+    priceRange: "$6.08 - $12.99",
     sameAs: "https://rapidiptvswiss.com",
   };
 
@@ -46,7 +46,7 @@ export default function IPTVLuganoPage() {
         </h1>
 
         <p className="text-lg text-[var(--color-text-secondary)] mb-6 leading-relaxed">
-          Lugano is the jewel of Ticino, the Italian-speaking region of Switzerland. Nestled between the lake and the mountains, Lugano blends Swiss precision with Mediterranean flair. For residents who want access to Italian channels, Swiss content, and international programming, Rapid IPTV Swiss is the ideal solution. We deliver over 30,000 live channels in 4K quality, a massive on-demand library, and reliable streaming across all devices.
+          Lugano is the jewel of Ticino, the Italian-speaking region of Switzerland. Nestled between the lake and the mountains, Lugano blends Swiss precision with Mediterranean flair. For residents who want access to Italian channels, Swiss content, and international programming, Rapid IPTV Swiss is the ideal solution. We deliver over 19,000 live channels in 4K quality, a massive on-demand library, and reliable streaming across all devices.
         </p>
 
         <h2 className="text-2xl md:text-3xl font-semibold text-white mt-12 mb-6">
@@ -105,10 +105,10 @@ export default function IPTVLuganoPage() {
         </p>
 
         <h2 className="text-2xl md:text-3xl font-semibold text-white mt-12 mb-6">
-          IPTV Subscriptions from CHF 5.00/Month
+          IPTV Subscriptions from $6.08/mo
         </h2>
         <p className="text-[var(--color-text-secondary)] mb-6 leading-relaxed">
-          Enjoy all-inclusive IPTV at an affordable price. Our annual plan starts at CHF 5.00 per month, with 3-month and 6-month options also available. Every plan supports 1 to 5 simultaneous connections and includes 30,000+ live channels, movies and series on demand, catch-up TV, and a full electronic program guide.
+          Enjoy all-inclusive IPTV at an affordable price. Our annual plan starts at $6.08 per month, with 3-month and 6-month options also available. Every plan supports 1 to 5 simultaneous connections and includes 19,000+ live channels, movies and series on demand, catch-up TV, and a full electronic program guide.
         </p>
         <p className="text-[var(--color-text-secondary)] mb-6 leading-relaxed">
           Pay with TWINT, credit card, PayPal, or cryptocurrency. No contracts and no hidden fees. Explore all options on our{" "}

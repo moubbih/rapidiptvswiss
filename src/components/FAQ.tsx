@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react";
 const FAQ_ITEMS = [
   {
     question: "What is Rapid IPTV Swiss?",
-    answer: "Rapid IPTV Swiss is a premium IPTV subscription service designed for Switzerland. It provides access to over 30,000 live TV channels including Swiss channels (SRF, RTS, RSI), 150,000+ movies and series on demand, and live sports events from around the globe. It streams in 4K Ultra HD with anti-freeze technology guaranteeing 99.9% uptime.",
+    answer: "Rapid IPTV Swiss is a premium IPTV subscription service designed for Switzerland. It provides access to over 19,000 live TV channels including Swiss channels (SRF, RTS, RSI), 150,000+ movies and series on demand, and live sports events from around the globe. It streams in 4K Ultra HD with anti-freeze technology guaranteeing 99.9% uptime.",
   },
   {
     question: "Which Swiss channels are included?",
@@ -26,19 +26,19 @@ const FAQ_ITEMS = [
   },
   {
     question: "Is there a contract or setup fee?",
-    answer: "No. Rapid IPTV Swiss has zero hidden fees and no contracts. Plans start at CHF 29.99 for 3 months (just CHF 10.00/mo), with our best value 12-month plan at CHF 5.00/mo. You pay once for the duration you choose.",
+    answer: "No. Rapid IPTV Swiss has zero hidden fees and no contracts. Plans start at $31.99 for 3 months (just $10.66/mo), with our best value 12-month plan at $6.08/mo. You pay once for the duration you choose.",
   },
   {
     question: "How does this compare to Swisscom TV or Sunrise TV?",
-    answer: "Rapid IPTV Swiss offers 30,000+ channels versus the typical 200-300 from Swiss cable providers, at a fraction of the cost. No equipment rental fees, no appointments, and no geographic restrictions. Plus 4K quality, massive VOD library, and catch-up TV included.",
+    answer: "Rapid IPTV Swiss offers 19,000+ channels versus the typical 200-300 from Swiss cable providers, at a fraction of the cost. No equipment rental fees, no appointments, and no geographic restrictions. Plus 4K quality, massive VOD library, and catch-up TV included.",
   },
   {
     question: "Does Rapid IPTV Swiss include live sports?",
     answer: "Yes. All major live sports included: Champions League, Bundesliga, Swiss Super League, Premier League, Formula 1, UFC, NHL, NBA, tennis, and more. Pay-Per-View events are included at no extra cost.",
   },
   {
-    question: "Can I pay in CHF?",
-    answer: "Yes! All prices are in Swiss Francs (CHF). We accept TWINT, credit card, and PayPal for your convenience.",
+    question: "Can I pay in USD?",
+    answer: "Yes! All prices are in USD ($). We accept TWINT, credit card, and PayPal for your convenience.",
   },
   {
     question: "What is anti-freeze technology?",

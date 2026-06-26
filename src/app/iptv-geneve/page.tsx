@@ -6,7 +6,7 @@ import StructuredData from "@/components/StructuredData";
 export const metadata: Metadata = {
   title: "IPTV Geneva | Best IPTV Service in Geneva 2026",
   description:
-    "Top IPTV service in Geneva with 30,000+ channels in 4K. Watch Servette FC, RTS, French channels and more. Plans from CHF 5.00/mo. Ideal for expats.",
+    "Top IPTV service in Geneva with 19,000+ channels in 4K. Watch Servette FC, RTS, French channels and more. Plans from $6.08/mo. Ideal for expats.",
   alternates: { canonical: "/iptv-geneve" },
 };
 
@@ -16,7 +16,7 @@ export default function IPTVGenevePage() {
     "@type": "LocalBusiness",
     name: "Rapid IPTV Swiss - Geneva",
     description:
-      "Premium IPTV service provider serving Geneva, Switzerland with 30,000+ live channels, movies, and series.",
+      "Premium IPTV service provider serving Geneva, Switzerland with 19,000+ live channels, movies, and series.",
     url: "https://rapidiptvswiss.com/iptv-geneve",
     areaServed: {
       "@type": "City",
@@ -26,7 +26,7 @@ export default function IPTVGenevePage() {
         name: "Switzerland",
       },
     },
-    priceRange: "CHF 5.00 - CHF 13.00",
+    priceRange: "$6.08 - $12.99",
     sameAs: "https://rapidiptvswiss.com",
   };
 
@@ -46,7 +46,7 @@ export default function IPTVGenevePage() {
         </h1>
 
         <p className="text-lg text-[var(--color-text-secondary)] mb-6 leading-relaxed">
-          Geneva is one of the most cosmopolitan cities in the world. Home to the United Nations, CERN, the Red Cross, and countless international organizations, Geneva has a uniquely diverse population. Residents speak French, English, Spanish, Arabic, Portuguese, and dozens of other languages. Rapid IPTV Swiss is the perfect entertainment solution for this multicultural city, offering over 30,000 live channels from more than 80 countries, all in stunning 4K quality.
+          Geneva is one of the most cosmopolitan cities in the world. Home to the United Nations, CERN, the Red Cross, and countless international organizations, Geneva has a uniquely diverse population. Residents speak French, English, Spanish, Arabic, Portuguese, and dozens of other languages. Rapid IPTV Swiss is the perfect entertainment solution for this multicultural city, offering over 19,000 live channels from more than 80 countries, all in stunning 4K quality.
         </p>
 
         <h2 className="text-2xl md:text-3xl font-semibold text-white mt-12 mb-6">
@@ -104,10 +104,10 @@ export default function IPTVGenevePage() {
         </p>
 
         <h2 className="text-2xl md:text-3xl font-semibold text-white mt-12 mb-6">
-          IPTV Plans Starting at CHF 5.00/Month
+          IPTV Plans Starting at $6.08/mo
         </h2>
         <p className="text-[var(--color-text-secondary)] mb-6 leading-relaxed">
-          Enjoy premium entertainment at a fraction of the cost of traditional cable. Our subscriptions start at just CHF 5.00 per month with an annual plan. Choose from 3-month, 6-month, or 12-month options with support for 1 to 5 devices. Every plan includes 30,000+ live channels, on-demand movies and series, catch-up TV, and a built-in EPG.
+          Enjoy premium entertainment at a fraction of the cost of traditional cable. Our subscriptions start at just $6.08 per month with an annual plan. Choose from 3-month, 6-month, or 12-month options with support for 1 to 5 devices. Every plan includes 19,000+ live channels, on-demand movies and series, catch-up TV, and a built-in EPG.
         </p>
         <p className="text-[var(--color-text-secondary)] mb-6 leading-relaxed">
           We accept TWINT, credit cards, PayPal, and cryptocurrency. No hidden fees, no long-term contracts. See all available options on our{" "}

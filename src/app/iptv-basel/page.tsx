@@ -6,7 +6,7 @@ import StructuredData from "@/components/StructuredData";
 export const metadata: Metadata = {
   title: "IPTV Basel | Best IPTV Service in Basel 2026",
   description:
-    "Best IPTV service in Basel with 30,000+ channels in 4K. Watch FC Basel, SRF, German & French channels. Plans from CHF 5.00/mo. Works on all devices.",
+    "Best IPTV service in Basel with 19,000+ channels in 4K. Watch FC Basel, SRF, German & French channels. Plans from $6.08/mo. Works on all devices.",
   alternates: { canonical: "/iptv-basel" },
 };
 
@@ -16,7 +16,7 @@ export default function IPTVBaselPage() {
     "@type": "LocalBusiness",
     name: "Rapid IPTV Swiss - Basel",
     description:
-      "Premium IPTV service provider serving Basel, Switzerland with 30,000+ live channels, movies, and series.",
+      "Premium IPTV service provider serving Basel, Switzerland with 19,000+ live channels, movies, and series.",
     url: "https://rapidiptvswiss.com/iptv-basel",
     areaServed: {
       "@type": "City",
@@ -26,7 +26,7 @@ export default function IPTVBaselPage() {
         name: "Switzerland",
       },
     },
-    priceRange: "CHF 5.00 - CHF 13.00",
+    priceRange: "$6.08 - $12.99",
     sameAs: "https://rapidiptvswiss.com",
   };
 
@@ -46,7 +46,7 @@ export default function IPTVBaselPage() {
         </h1>
 
         <p className="text-lg text-[var(--color-text-secondary)] mb-6 leading-relaxed">
-          Basel sits at the crossroads of Switzerland, France, and Germany, making it one of the most culturally rich cities in Europe. Known worldwide as a hub for pharmaceuticals, art, and architecture, Basel is home to a diverse population that values quality entertainment. Rapid IPTV Swiss brings over 30,000 live channels in 4K directly to your screen, serving the unique trilingual needs of Basel residents.
+          Basel sits at the crossroads of Switzerland, France, and Germany, making it one of the most culturally rich cities in Europe. Known worldwide as a hub for pharmaceuticals, art, and architecture, Basel is home to a diverse population that values quality entertainment. Rapid IPTV Swiss brings over 19,000 live channels in 4K directly to your screen, serving the unique trilingual needs of Basel residents.
         </p>
 
         <h2 className="text-2xl md:text-3xl font-semibold text-white mt-12 mb-6">
@@ -104,10 +104,10 @@ export default function IPTVBaselPage() {
         </p>
 
         <h2 className="text-2xl md:text-3xl font-semibold text-white mt-12 mb-6">
-          Flexible IPTV Plans from CHF 5.00/Month
+          Flexible IPTV Plans from $6.08/mo
         </h2>
         <p className="text-[var(--color-text-secondary)] mb-6 leading-relaxed">
-          Cut the cord and save with Rapid IPTV Swiss. Our plans start at CHF 5.00 per month on an annual subscription. Choose 3-month, 6-month, or 12-month durations with support for 1 to 5 simultaneous devices. Every subscription includes 30,000+ live channels, movies and series on demand, catch-up TV, and a full EPG.
+          Cut the cord and save with Rapid IPTV Swiss. Our plans start at $6.08 per month on an annual subscription. Choose 3-month, 6-month, or 12-month durations with support for 1 to 5 simultaneous devices. Every subscription includes 19,000+ live channels, movies and series on demand, catch-up TV, and a full EPG.
         </p>
         <p className="text-[var(--color-text-secondary)] mb-6 leading-relaxed">
           Pay securely with TWINT, credit card, PayPal, or crypto. No binding contracts and no surprise charges. View all plans on our{" "}

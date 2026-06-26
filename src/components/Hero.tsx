@@ -18,8 +18,8 @@ export default function Hero() {
   return (
     <section className="relative w-full min-h-[700px] flex items-center justify-center overflow-hidden" style={{ height: "100dvh" }}>
       <div className="absolute inset-0 z-0">
-        <Image src="/hero_bg.webp" alt="IPTV Switzerland - Stream 30,000+ channels in 4K with Rapid IPTV Swiss" fill sizes="100vw" className="object-cover object-center opacity-60" priority />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-background-base)] via-[var(--color-background-base)]/60 to-black/20" />
+        <Image src="/hero_bg_new.png" alt="IPTV Switzerland - Stream 19,000+ channels in 4K with Rapid IPTV Swiss" fill sizes="100vw" className="object-cover object-center opacity-40" priority />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-background-base)] via-[var(--color-background-base)]/70 to-black/20" />
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-background-base)]/80 via-transparent to-transparent" />
       </div>
 
@@ -29,7 +29,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-2xl text-[var(--color-text-secondary)] max-w-2xl mb-8 md:mb-10 drop-shadow-md leading-relaxed">
-          Stream 30,000+ live channels including SRF, RTS, RSI &amp; global sports in stunning 4K. Buffer-free IPTV built for Swiss homes. Plans from CHF 5.00/mo.
+          Stream 19,000+ live channels including SRF, RTS, RSI &amp; global sports in stunning 4K. Buffer-free IPTV built for Swiss homes. Plans from $6.08/mo.
         </motion.p>
 
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">

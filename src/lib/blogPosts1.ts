@@ -439,7 +439,7 @@ export const POSTS_1_7: FullBlogPost[] = [
       },
       {
         type: "paragraph",
-        text: "Cost is often the deciding factor for Swiss consumers, and the difference is striking. A typical cable TV package from Swisscom or Sunrise costs between CHF 40 and CHF 60 per month, often requiring a bundle with internet service to get the best price. Premium add-ons for sports or movie channels push the total even higher.",
+        text: "Cost is often the deciding factor for Swiss consumers, and the difference is striking. A typical cable TV package from Swisscom or Sunrise costs between $40 and $60 per month, often requiring a bundle with internet service to get the best price. Premium add-ons for sports or movie channels push the total even higher.",
       },
       {
         type: "paragraph",

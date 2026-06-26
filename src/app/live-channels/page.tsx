@@ -116,7 +116,7 @@ export default function ChannelListPage() {
           <div className="flex flex-col items-center justify-center py-20 text-[var(--color-brand-primary)]">
             <Loader2 className="w-12 h-12 animate-spin mb-4" />
             <p className="text-white text-lg animate-pulse">
-              Loading &gt; 30,000 Channels...
+              Loading &gt; 19,000 Channels...
             </p>
           </div>
         ) : (

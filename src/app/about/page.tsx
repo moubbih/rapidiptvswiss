@@ -36,9 +36,9 @@ export default function AboutPage() {
         <div className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Our Story</h2>
           <div className="space-y-4 text-neutral-300 leading-relaxed">
-            <p>Rapid IPTV Swiss started in early 2024 when our founder, Daniel Meier, realized that Swiss households were paying CHF 40&ndash;60 per month for cable TV packages with only 200&ndash;300 channels. After spending 8 years working in streaming infrastructure across Europe, he knew there was a better way to deliver television content to Swiss homes.</p>
+            <p>Rapid IPTV Swiss started in early 2024 when our founder, Daniel Meier, realized that Swiss households were paying $40&ndash;60 per month for cable TV packages with only 200&ndash;300 channels. After spending 8 years working in streaming infrastructure across Europe, he knew there was a better way to deliver television content to Swiss homes.</p>
             <p>We built Rapid IPTV Swiss specifically for the Swiss market. That means full support for all four national languages, optimized servers for Swiss ISPs like Swisscom, Sunrise, and Salt, and pricing in Swiss Francs with local payment methods including TWINT. Our anti-freeze technology uses geographically distributed server nodes with strict per-server user limits to ensure smooth streaming even during peak events.</p>
-            <p>Today, we serve households across Z&uuml;rich, Gen&egrave;ve, Basel, Bern, Lausanne, Lugano, and beyond. Our service includes over 30,000 live channels, 150,000+ on-demand titles, and comprehensive Swiss channel coverage including SRF, RTS, and RSI.</p>
+            <p>Today, we serve households across Z&uuml;rich, Gen&egrave;ve, Basel, Bern, Lausanne, Lugano, and beyond. Our service includes over 19,000 live channels, 150,000+ on-demand titles, and comprehensive Swiss channel coverage including SRF, RTS, and RSI.</p>
           </div>
         </div>
 
@@ -80,7 +80,7 @@ export default function AboutPage() {
             { icon: Shield, title: "Swiss-Optimized Servers", desc: "Our infrastructure is specifically optimized for Swiss ISPs including Swisscom, Sunrise, and Salt. We use European server nodes with direct peering to minimize latency and maximize quality." },
             { icon: Zap, title: "Anti-Freeze Technology", desc: "We limit users per server and use global load balancing to prevent congestion. This guarantees buffer-free streaming even during peak events like Champions League finals or Formula 1 races." },
             { icon: Users, title: "Multilingual Support", desc: "Switzerland has four national languages and so does our support. Get help in English, German, French, or Italian via WhatsApp or live chat, 24 hours a day." },
-            { icon: Globe, title: "30,000+ Channels", desc: "From Swiss local channels (SRF, RTS, RSI) to global sports and entertainment. We offer the widest channel selection available to Swiss viewers, all in up to 4K Ultra HD." },
+            { icon: Globe, title: "19,000+ Channels", desc: "From Swiss local channels (SRF, RTS, RSI) to global sports and entertainment. We offer the widest channel selection available to Swiss viewers, all in up to 4K Ultra HD." },
           ].map((item) => (
             <div key={item.title} className="bg-[var(--color-background-surface)] border border-white/5 rounded-xl p-6">
               <item.icon className="w-8 h-8 text-[var(--color-brand-primary)] mb-4" />

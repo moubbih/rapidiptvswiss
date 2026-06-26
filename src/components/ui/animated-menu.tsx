@@ -33,7 +33,7 @@ export default function AnimatedMenu({ links }: { links: NavLink[] }) {
           ))}
           <motion.li variants={itemVariants} className="mt-8">
             <Link href="/plans" onClick={() => setIsOpen(false)} className="block w-full bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-secondary)] text-white px-6 py-4 rounded-lg font-bold text-center text-lg transition-colors">Get Started Now</Link>
-            <p className="text-center text-neutral-400 text-xs mt-3">IPTV Switzerland from CHF 6.99/mo</p>
+            <p className="text-center text-neutral-400 text-xs mt-3">IPTV Switzerland from $6.08/mo</p>
           </motion.li>
         </motion.ul>
         <MenuToggle toggle={() => setIsOpen(!isOpen)} />

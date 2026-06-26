@@ -81,10 +81,10 @@ export default function BlogPostTemplate({
 
   const ctaText =
     post.lang === "de"
-      ? "Unsere Abonnements ab CHF 5.00/Monat ansehen"
+      ? "Unsere Abonnements ab $6.08/Monat ansehen"
       : post.lang === "fr"
-      ? "Voir nos abonnements d\u00e8s CHF 5.00/mois"
-      : "See our plans starting at CHF 5.00/mo";
+      ? "Voir nos abonnements d\u00e8s $6.08/mois"
+      : "See our plans starting at $6.08/mo";
 
   const backText = post.lang === "de" ? "Zur\u00fcck zum Blog" : post.lang === "fr" ? "Retour au blog" : "Back to Blog";
 
@@ -182,7 +182,7 @@ export default function BlogPostTemplate({
               ? "Erhalten Sie sofortigen Zugang zu \u00fcber 30.000 Live-Kan\u00e4len, 4K-Streaming und der gr\u00f6ssten VOD-Bibliothek der Schweiz."
               : post.lang === "fr"
               ? "Acc\u00e9dez instantan\u00e9ment \u00e0 plus de 30 000 cha\u00eenes en direct, au streaming 4K et \u00e0 la plus grande biblioth\u00e8que VOD de Suisse."
-              : "Get instant access to 30,000+ live channels, 4K streaming, and the biggest VOD library in Switzerland."}
+              : "Get instant access to 19,000+ live channels, 4K streaming, and the biggest VOD library in Switzerland."}
           </p>
           <Link href="/plans" className="inline-block bg-[var(--color-brand-primary)] text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-[var(--color-brand-secondary)] transition-all hover:scale-105">
             {ctaText}

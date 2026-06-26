@@ -9,8 +9,21 @@ const WA_NUMBER = "15595082154";
 
 /* ── Exact prices for homepage preview (1 & 2 devices) ──── */
 const PRICE_TABLE: Record<number, { "3": number; "6": number; "12": number }> = {
-  1: { "3": 29.99, "6": 44.99, "12": 59.99 },
-  2: { "3": 39.99, "6": 59.99, "12": 79.99 },
+  1: { "3": 31.99, "6": 44.99, "12": 72.98 },
+  2: { "3": 42.99, "6": 60.99, "12": 99.99 },
+};
+
+const PAYMENT_LINKS: Record<number, Record<string, string>> = {
+  1: {
+    "3": "https://flujipay.com/payment/JP77DBEZ8QOFRSAT5TY6EFKCPAV3JU1Z",
+    "6": "https://flujipay.com/payment/QIBYNKJNPQXLID1Y4GVFDPJOBBDSIQHQ",
+    "12": "https://flujipay.com/payment/RY0GRASNLWXGSTHJUHTWZQHMLZQLYFDX",
+  },
+  2: {
+    "3": "https://flujipay.com/payment/Z5G6DD7DBNWTWNIYYP6CRFG4B7PRPAFV",
+    "6": "https://flujipay.com/payment/MSI861IBDXQSVOJ5KXS4FSIMSDVAMBKO",
+    "12": "https://flujipay.com/payment/BWEWVKSUSDACQBCYT6IC4EFLC2E1VKMJ",
+  },
 };
 
 const PLANS = [
@@ -20,7 +33,7 @@ const PLANS = [
 ];
 
 const FEATURES = [
-  "30,000+ Live Channels",
+  "19,000+ Live Channels",
   "150,000+ Movies & Series",
   "Swiss Channels (SRF, RTS, RSI)",
   "4K Ultra HD Quality",
@@ -38,14 +51,14 @@ export default function Pricing() {
     "@type": "Product",
     name: "Rapid IPTV Swiss Subscription",
     description:
-      "Premium IPTV subscription Switzerland with 30,000+ channels, Swiss channels SRF RTS RSI, 4K Ultra HD, anti-freeze technology.",
+      "Premium IPTV subscription Switzerland with 19,000+ channels, Swiss channels SRF RTS RSI, 4K Ultra HD, anti-freeze technology.",
     image: "https://rapidiptvswiss.com/hero_bg.webp",
     brand: { "@type": "Brand", name: "Rapid IPTV Swiss" },
     offers: PLANS.map((plan) => ({
       "@type": "Offer",
       name: `${plan.duration} - ${devices} Device(s)`,
       price: getPrice(plan.months),
-      priceCurrency: "CHF",
+      priceCurrency: "USD",
       availability: "https://schema.org/InStock",
       url: "https://rapidiptvswiss.com/plans",
       priceValidUntil: "2026-12-31",
@@ -64,7 +77,7 @@ export default function Pricing() {
             <span className="text-[var(--color-brand-primary)]">Switzerland</span>
           </h2>
           <p className="text-neutral-400 text-lg">
-            No hidden fees. No contracts. Instant activation. All prices in CHF.
+            No hidden fees. No contracts. Instant activation. All prices in USD.
           </p>
         </div>
 
@@ -128,11 +141,11 @@ export default function Pricing() {
                           : "text-white"
                       }`}
                     >
-                      CHF {currentPrice}
+                      $&nbsp;{currentPrice}
                     </span>
                   </div>
                   <div className="text-sm text-neutral-500 mt-2">
-                    CHF {monthly}/mo &middot; {devices} Device
+                    $&nbsp;{monthly}/mo &middot; {devices} Device
                     {devices > 1 && "s"}
                   </div>
                   {plan.savings ? (
@@ -165,11 +178,7 @@ export default function Pricing() {
                 </div>
 
                 <a
-                  href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
-                    `Hi, I'd like to order the ${plan.duration} IPTV plan for ${devices} device${
-                      devices > 1 ? "s" : ""
-                    } (CHF ${currentPrice})`
-                  )}`}
+                  href={PAYMENT_LINKS[devices][plan.months]}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`block w-full text-center py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-[1.02] ${

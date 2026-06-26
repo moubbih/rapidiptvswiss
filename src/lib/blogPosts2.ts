@@ -788,7 +788,7 @@ export const POSTS_8_14: FullBlogPost[] = [
       },
       {
         type: "paragraph",
-        text: "The cost difference is substantial. A single IPTV subscription from Rapid IPTV Swiss can replace multiple streaming services and a traditional TV package, potentially saving Swiss households CHF 50 or more per month. For families watching live TV, sports, and on-demand content, IPTV offers dramatically better value.",
+        text: "The cost difference is substantial. A single IPTV subscription from Rapid IPTV Swiss can replace multiple streaming services and a traditional TV package, potentially saving Swiss households $50 or more per month. For families watching live TV, sports, and on-demand content, IPTV offers dramatically better value.",
       },
       {
         type: "heading",

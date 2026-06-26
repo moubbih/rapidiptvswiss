@@ -4,7 +4,7 @@ const FEATURES = [
   {
     icon: Tv2,
     title: "Crystal Clear 4K UHD",
-    description: "Watch Swiss channels like SRF, RTS, and RSI plus 30,000+ global channels in stunning 4K Ultra HD quality.",
+    description: "Watch Swiss channels like SRF, RTS, and RSI plus 19,000+ global channels in stunning 4K Ultra HD quality.",
   },
   {
     icon: Wifi,
