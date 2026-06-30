@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { Flame, Check, Zap, ArrowRight } from "lucide-react";
+import CheckoutModal from "./CheckoutModal";
 
 const WA_NUMBER = "15595082154";
 
@@ -31,17 +33,22 @@ const DEALS = [
 ];
 
 export default function BiggestSale() {
-  const openPaymentPopup = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
-    e.preventDefault();
-    const width = 500;
-    const height = 800;
-    const left = (window.screen.width - width) / 2;
-    const top = (window.screen.height - height) / 2;
-    window.open(
-      url,
-      "PaymentCheckout",
-      `width=${width},height=${height},top=${top},left=${left},scrollbars=yes,resizable=yes`
-    );
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalPlan, setModalPlan] = useState<{
+    title: string;
+    price: number;
+    months: string;
+    devices: number;
+  } | null>(null);
+
+  const handlePurchase = (deal: typeof DEALS[number]) => {
+    setModalPlan({
+      title: `${deal.duration} Premium IPTV`,
+      price: deal.salePrice,
+      months: deal.duration === "2 Years" ? "24" : "60",
+      devices: deal.connections,
+    });
+    setIsModalOpen(true);
   };
 
   return (
@@ -138,9 +145,8 @@ export default function BiggestSale() {
                   </div>
 
                   {/* CTA */}
-                  <a
-                    href={deal.paymentLink}
-                    onClick={(e) => openPaymentPopup(e, deal.paymentLink)}
+                  <button
+                    onClick={() => handlePurchase(deal)}
                     className={`flex items-center justify-center gap-2 w-full py-4 rounded-xl font-bold text-base transition-all duration-300 hover:scale-[1.02] ${
                       isFeatured
                         ? "bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-secondary)] text-white shadow-lg shadow-blue-500/25"
@@ -150,7 +156,7 @@ export default function BiggestSale() {
                     <Zap className="w-4 h-4" />
                     Get This Deal
                     <ArrowRight className="w-4 h-4" />
-                  </a>
+                  </button>
 
                   <p className="text-center text-[11px] text-neutral-500 mt-3 font-medium tracking-wider uppercase">
                     No contract &middot; Instant activation
@@ -161,6 +167,18 @@ export default function BiggestSale() {
           })}
         </div>
       </div>
+
+      {/* Render the Checkout Modal */}
+      {modalPlan && (
+        <CheckoutModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          planTitle={modalPlan.title}
+          price={modalPlan.price}
+          months={modalPlan.months}
+          devices={modalPlan.devices}
+        />
+      )}
     </section>
   );
 }

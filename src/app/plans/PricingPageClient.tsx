@@ -3,44 +3,8 @@
 import { useState } from "react";
 import { Check, Users, Tv, Sparkles, CreditCard, Shield } from "lucide-react";
 import StructuredData from "@/components/StructuredData";
-
-/* ── Exact pricing grid (all in USD) ─────────────────────── */
-const PRICE_TABLE: Record<number, { "3": number; "6": number; "12": number }> = {
-  1: { "3": 31.99, "6": 44.99, "12": 72.98 },
-  2: { "3": 42.99, "6": 60.99, "12": 99.99 },
-  3: { "3": 55.99, "6": 85.99, "12": 149.99 },
-  4: { "3": 84.99, "6": 109.99, "12": 179.99 },
-  5: { "3": 92.99, "6": 129.99, "12": 198.99 },
-};
-
-const PAYMENT_LINKS: Record<number, Record<string, string>> = {
-  1: {
-    "1": "https://flujipay.com/payment/D4SYNKFOVJ5DFWSQ78NGGBSSWIC3VVZH",
-    "3": "https://flujipay.com/payment/JP77DBEZ8QOFRSAT5TY6EFKCPAV3JU1Z",
-    "6": "https://flujipay.com/payment/QIBYNKJNPQXLID1Y4GVFDPJOBBDSIQHQ",
-    "12": "https://flujipay.com/payment/RY0GRASNLWXGSTHJUHTWZQHMLZQLYFDX",
-  },
-  2: {
-    "3": "https://flujipay.com/payment/Z5G6DD7DBNWTWNIYYP6CRFG4B7PRPAFV",
-    "6": "https://flujipay.com/payment/MSI861IBDXQSVOJ5KXS4FSIMSDVAMBKO",
-    "12": "https://flujipay.com/payment/BWEWVKSUSDACQBCYT6IC4EFLC2E1VKMJ",
-  },
-  3: {
-    "3": "https://flujipay.com/payment/HEQMAAESEZ47HFYCSPNV0HNBK0VSG6MS",
-    "6": "https://flujipay.com/payment/ZXQATQOTEEMNA9KEEMPSMXHACHXGM6PK",
-    "12": "https://flujipay.com/payment/QR6ZLL8VGYQTGIVJCQOARXAJY2XLFX0P",
-  },
-  4: {
-    "3": "https://flujipay.com/payment/XOQDPYEH6TDRQXWWKO2HOPLQCCNKZ4LM",
-    "6": "https://flujipay.com/payment/VIAWCDBZZDAEOQXMU2ABYQB4BMJFYIAL",
-    "12": "https://flujipay.com/payment/HHTW5RX2RTBHDLJF7MDTIFZBGCHVZYOV",
-  },
-  5: {
-    "3": "https://flujipay.com/payment/VWANHNNVRTRIQWREMOXVY8MPW9MX4Z1L",
-    "6": "https://flujipay.com/payment/2LRJGBKPZLKUFVS8L6HIIHSGUD3PWUCW",
-    "12": "https://flujipay.com/payment/WQXO8JCV3LNS3RJNEZRNNGJW2HP1BOAQ",
-  },
-};
+import CheckoutModal from "@/components/CheckoutModal";
+import { PRICE_TABLE, getPrice, getPlanTitle } from "@/lib/pricing";
 
 const DEVICE_LABELS: Record<number, string> = {
   1: "Single connection",
@@ -71,10 +35,6 @@ const FEATURES = [
 
 const WA_NUMBER = "15595082154";
 
-function getPrice(devices: number, months: "3" | "6" | "12"): number {
-  return PRICE_TABLE[devices]?.[months] ?? 0;
-}
-
 function perMonth(total: number, months: number): string {
   return (total / months).toFixed(2);
 }
@@ -89,18 +49,24 @@ const PAYMENT_METHODS = [
 
 export default function PricingPage() {
   const [devices, setDevices] = useState(1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalPlan, setModalPlan] = useState<{
+    title: string;
+    price: number;
+    months: "1" | "3" | "6" | "12";
+    devices: number;
+  } | null>(null);
 
-  const openPaymentPopup = (e: React.MouseEvent<HTMLAnchorElement>, url: string) => {
-    e.preventDefault();
-    const width = 500;
-    const height = 800;
-    const left = (window.screen.width - width) / 2;
-    const top = (window.screen.height - height) / 2;
-    window.open(
-      url,
-      "PaymentCheckout",
-      `width=${width},height=${height},top=${top},left=${left},scrollbars=yes,resizable=yes`
-    );
+  const handlePurchase = (planMonths: "1" | "3" | "6" | "12") => {
+    const title = getPlanTitle(planMonths, devices);
+    const price = getPrice(devices, planMonths);
+    setModalPlan({
+      title,
+      price,
+      months: planMonths,
+      devices,
+    });
+    setIsModalOpen(true);
   };
 
   /* Product schema for the most popular plan: 3 devices / 12 months */
@@ -163,14 +129,13 @@ export default function PricingPage() {
           </div>
           {/* 1 Month Quick Trial Button */}
           <div className="mt-2 mb-4">
-            <a
-              href="https://flujipay.com/payment/D4SYNKFOVJ5DFWSQ78NGGBSSWIC3VVZH"
-              onClick={(e) => openPaymentPopup(e, "https://flujipay.com/payment/D4SYNKFOVJ5DFWSQ78NGGBSSWIC3VVZH")}
+            <button
+              onClick={() => handlePurchase("1")}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30 text-amber-300 border border-amber-500/30 hover:border-amber-500/50 transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-orange-950/20"
             >
               <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
               <span>1 Month Quick Trial &mdash; $12.99</span>
-            </a>
+            </button>
           </div>
 
           <div className="flex items-center gap-3 mt-1">
@@ -288,12 +253,8 @@ export default function PricingPage() {
 
                 {/* CTA */}
                 <div className="mt-auto">
-                  <a
-                    href={PAYMENT_LINKS[devices]?.[plan.months] || "#"}
-                    onClick={(e) => {
-                      const link = PAYMENT_LINKS[devices]?.[plan.months];
-                      if (link) openPaymentPopup(e, link);
-                    }}
+                  <button
+                    onClick={() => handlePurchase(plan.months)}
                     className={`block w-full text-center py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:scale-[1.02] ${
                       isHighlight
                         ? "bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-secondary)] text-white shadow-lg shadow-blue-500/20"
@@ -301,7 +262,7 @@ export default function PricingPage() {
                     }`}
                   >
                     Order Now
-                  </a>
+                  </button>
                 </div>
               </div>
             );
@@ -444,6 +405,18 @@ export default function PricingPage() {
           </div>
         </div>
       </div>
+
+      {/* Render the Checkout Modal */}
+      {modalPlan && (
+        <CheckoutModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          planTitle={modalPlan.title}
+          price={modalPlan.price}
+          months={modalPlan.months}
+          devices={modalPlan.devices}
+        />
+      )}
     </div>
   );
 }

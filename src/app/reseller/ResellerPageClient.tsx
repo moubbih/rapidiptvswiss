@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { Users, DollarSign, Palette, Tv, Rocket, ShieldCheck, Check, MessageCircle } from "lucide-react";
+import CheckoutModal from "@/components/CheckoutModal";
 
 const WA_NUMBER = "15595082154";
 const WA_LINK = `https://wa.me/${WA_NUMBER}`;
@@ -22,6 +24,24 @@ const PLANS = [
 ];
 
 export default function ResellerPageClient() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalPlan, setModalPlan] = useState<{
+    title: string;
+    price: number;
+    months: string;
+    devices: number;
+  } | null>(null);
+
+  const handlePurchase = (plan: typeof PLANS[number]) => {
+    const priceNum = parseFloat(plan.price.replace("$", ""));
+    setModalPlan({
+      title: plan.label,
+      price: priceNum,
+      months: "",
+      devices: 0,
+    });
+    setIsModalOpen(true);
+  };
   return (
     <div className="min-h-screen bg-[var(--color-background-base)] pt-24 pb-20">
       <div className="container mx-auto px-4 md:px-8 text-center mb-16">
@@ -57,11 +77,29 @@ export default function ResellerPageClient() {
                   <div key={fIdx} className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-[var(--color-brand-primary)] shrink-0" /><span className="text-neutral-300 text-xs">{f}</span></div>
                 ))}
               </div>
-              <a href={`${WA_LINK}?text=${encodeURIComponent(`Hi, I'm interested in the ${plan.credits} Credits reseller plan`)}`} target="_blank" rel="noopener noreferrer" className={`block w-full text-center py-3 rounded-lg font-bold text-sm transition-all hover:scale-[1.02] ${plan.popular ? "bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-secondary)] text-white" : "bg-white/10 hover:bg-white/15 text-white border border-white/10"}`}>Get {plan.credits} Credits</a>
+              <button
+                onClick={() => handlePurchase(plan)}
+                className={`block w-full text-center py-3 rounded-lg font-bold text-sm transition-all hover:scale-[1.02] ${plan.popular ? "bg-[var(--color-brand-primary)] hover:bg-[var(--color-brand-secondary)] text-white" : "bg-white/10 hover:bg-white/15 text-white border border-white/10"}`}
+              >
+                Get {plan.credits} Credits
+              </button>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Render the Checkout Modal */}
+      {modalPlan && (
+        <CheckoutModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          planTitle={modalPlan.title}
+          price={modalPlan.price}
+          months={modalPlan.months}
+          devices={modalPlan.devices}
+          isReseller={true}
+        />
+      )}
     </div>
   );
 }
